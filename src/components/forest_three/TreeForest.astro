@@ -1,0 +1,13 @@
+---
+import "./TreeForest.scss";
+import "styles/three.scss";
+import { Image } from "astro:assets";
+import overlay from "assets/glass_texture.webp";
+---
+
+<section class="treeForest relative w-screen h-screen">
+	<div id="three" class="w-full h-full"></div>
+	<Image src={overlay} alt="" class="overlay" />
+</section>
+
+<script src="./index.js"></script>

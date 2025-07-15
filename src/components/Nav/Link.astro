@@ -1,0 +1,30 @@
+---
+// library imports
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	text?: string;
+	href: string;
+	classes?: string;
+	icon?: {
+		name: string;
+		size: number;
+		classes?: string;
+	};
+}
+const path = import.meta.env.BASE_URL??'';
+const { text, href, icon, classes, ...rest } = Astro.props as Props;
+---
+
+<a href={`${path}${href}`} class:list={["my_links", classes ?? ""]} {...rest}>
+	{icon &&
+		<Icon
+			name={icon.name}
+			width={icon.size}
+			height={icon.size}
+			class:list={["block", icon.classes]}
+			data-navLink
+		/>
+	}
+	{text && <span>{text}</span>}
+</a>

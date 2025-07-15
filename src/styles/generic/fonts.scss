@@ -1,0 +1,190 @@
+@use "./styles/_variables" as *;
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-BlackItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Bold.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-BoldItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-ExtraLight.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-ExtraBoldItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-ExtraLightItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-ExtraLightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-ExtraBold.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Medium.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-LightItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Italic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Light.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-SemiBoldItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-SemiBold.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Regular.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-MediumItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Black.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-Thin.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('#{$base_url}/fonts/Bitter-ThinItalic.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Bitter-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('#{$base_url}/fonts/Ubuntu-Light.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Ubuntu-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('#{$base_url}/fonts/Ubuntu-Regular.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Ubuntu-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('#{$base_url}/fonts/Ubuntu-Bold.woff2') format('woff2'),
+    url('#{$base_url}/fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

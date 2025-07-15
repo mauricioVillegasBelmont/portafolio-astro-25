@@ -1,0 +1,14 @@
+---
+import "./OnlineView.scss";
+const { url } = Astro.props;
+---
+
+<div class="iframe-wrapper w-screen relative">
+	<iframe
+		id="iframe"
+		name="iframe"
+		src={url}
+		class="relative w-screen h-full bg-white"
+	></iframe>
+
+</div>

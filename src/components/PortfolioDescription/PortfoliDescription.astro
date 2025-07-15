@@ -1,0 +1,74 @@
+---
+import "styles/elements/notch.scss";
+import "./PortfoliDescription.scss"
+
+import Link from "components/Nav/Link.astro";
+import { Icon } from "astro-icon/components";
+const { name, customer, features, description,view_url,paths, online_url } = Astro.props;
+console.log(view_url)
+---
+
+<aside class="fixed right-0 top-0 w-fit z-1 mt-auto flex flex-col gap-1">
+	<button class="glass-btn flex items-center border-0 p-3 text-white bg-rose-800 hover:bg-rose-500 hover:text-gray-500" data-pushbar-target="main_menu">Detalles:</button>
+</aside>
+<dialog id="dialog" class="decription font-ubuntu fixed inset-0 m-auto rounded-md shadow-md" data-pushbar-id="main_menu">
+	<div class="py-6 px-5 bg-white">
+		<div
+			class="flex flex-wrap justify-between gap-1 items-start mb-3">
+			<div class="">
+				<h1
+					class="text-xl text-bold underline underline-offset-2">
+					{name}
+				</h1>
+				<p class="text-sm text-gray-500">Cliente: {customer}</p>
+				{online_url && 
+					<p class="">
+						<a
+							href={online_url}
+							target="_blank"
+							rel="noopener norefer"
+							class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-600 ring-1 ring-indigo-500/10 ring-inset">Ver online</a
+						>
+					</p>
+				}
+			</div>
+			<button type="button" name="close main menu" class="inline-flex items-center text-xs font-medium text-gray-600" data-pushbar-close="main_menu" data-action="close">
+				<Icon
+					name={'gridicons:cross-circle'}
+					width={24}
+					height={24}
+					class={"block"}
+					data-navLink
+				/>
+      </button>
+		</div>
+		<hr class="w-80 m-7 mx-auto" />
+		{paths &&
+			<h1 class="text-lg font-bold mb-2">Views:</h1>
+			<ul class="list-disc pl-8 text-gray-600 font-light text-rose-800 underline">
+				<li class="mb-1 ">
+					<a target="iframe" href={view_url} >Home</a>
+				</li>
+				{Object.keys(paths).map((key) => 
+					<li class="mb-1 ">
+						<a target="iframe" href={paths[key]}>{key}</a>
+					</li>
+				)}
+			</ul>
+			<hr class="w-80 m-7 mx-auto" />
+		}
+		{features &&
+			<h1 class="text-lg font-bold mb-2">Caracteristicas:</h1>
+			<ul class="list-disc pl-8 text-gray-600 font-light">
+				{features.map((item: string) => <li class="mb-1 ">{item}</li>)}
+			</ul>
+			<hr class="w-80 m-7 mx-auto" />
+		}
+		<div class="description-container py--5">
+			<h1 class="text-lg font-bold mb-2">Description:</h1>
+			<Fragment set:html={description} />
+		</div>
+	</div>
+</dialog>
+
+<script src="./Pushbar.ts"></script>

@@ -1,0 +1,17 @@
+@use "./styles/_variables" as *;
+.iframe-wrapper{
+  overflow: hidden;
+  height: calc(100lvh - 58px);
+  &::after{
+    content: '';
+    background-image: url('#{$base_url}/img/effectScreen.gif');
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: .25;
+  }
+}
+

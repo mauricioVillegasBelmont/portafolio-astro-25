@@ -1,0 +1,1 @@
+export interface AnimateCustomEvent extends CustomEvent<{clock: any;}>{}

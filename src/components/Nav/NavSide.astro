@@ -1,0 +1,28 @@
+---
+import "styles/elements/notch.scss";
+import "./NavSide.scss";
+
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+import { navData } from "data/navData.ts";
+---
+
+<nav class="side-nav fixed bottom-0 right-0 mt-auto w-fit">
+	<div
+		class="contact flex flex-col gap-3 py-5 px-3 notch-tl text-center lg:ml-auto">
+		{
+			navData.map((item) => (
+				<Link
+					text={item.text}
+					href={item.href}
+					icon={item.icon}
+					classes={item.classes}
+					data-navLink
+				/>
+			))
+		}
+	</div>
+</nav>
+<script>
+	import "components/Nav/link.ts";
+</script>

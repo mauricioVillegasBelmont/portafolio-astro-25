@@ -1,0 +1,32 @@
+@use "./styles/extends/scroll" as *;
+@use "./styles/extends/glass" as *;
+
+
+
+.bullet{
+  li,dd{
+    padding-left: 1rem;
+    &::before{
+      content: '- '
+    }
+  }
+}
+.details-item{
+  max-width: 75vw;
+  max-height: 55vh;
+  margin-left: auto;
+  @media (min-width: 640px) {
+    width: calc(45ch + 3rem);
+    max-width: calc(45ch + 3rem);
+  }
+  &[open] {
+    .summary-item {
+      [data-icon] {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+.summary-item {
+  margin-right: 0.25rem;
+}

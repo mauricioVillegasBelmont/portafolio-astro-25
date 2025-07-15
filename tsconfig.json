@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*", ".back.dist"],
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowJs": true,
+    "baseUrl": "src",
+    // "paths": {
+    //   "components/*": ["src/components/*"],
+    //   "layouts/*": ["src/layouts/*"]
+    // }
+  },
+  "exclude": [".back.dist",".back",".back.*"]
+}

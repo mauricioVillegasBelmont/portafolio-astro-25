@@ -1,0 +1,14 @@
+@use "./styles/extends/scroll" as *;
+@use "./styles/extends/glass" as *;
+.portafolioGrid{
+  @extend %scroll_barr;
+  height: fit-content;
+  max-height: 75vh;
+  overflow:auto;
+  max-width: 75vw;
+  .title{
+    @extend %glass_dark;
+    min-width: 30%;
+    width: fit-content;
+  }
+}

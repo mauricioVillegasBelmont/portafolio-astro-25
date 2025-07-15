@@ -1,0 +1,13 @@
+@use "styles/extends/glass" as *;
+
+.header_card {
+  width: 75vw;
+  @media (min-width: 640px) {
+    width: calc(45ch + 3rem);
+    max-width: calc(45ch + 3rem);
+  }
+}
+
+.header_card .header_card__content {
+  @extend %glass_primary;
+}

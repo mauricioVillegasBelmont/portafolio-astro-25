@@ -1,0 +1,16 @@
+---
+import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
+import TreeForest from "components/forest_three/TreeForest.astro";
+import Under_construction_site from "components/under_construction_site/under_construction_site.astro";
+import NavSide from "components/Nav/NavSide.astro";
+
+// @ts-ignore
+import PortafolioGrid from "components/PortafolioGrid/PortafolioGrid.astro";
+---
+
+<BaseTemplate title="Potrtafolio">
+	<TreeForest slot="background" />
+	<Under_construction_site slot="main" />
+	<PortafolioGrid slot="main" />
+	<NavSide slot="main" />
+</BaseTemplate>

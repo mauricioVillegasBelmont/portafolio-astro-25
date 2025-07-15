@@ -1,0 +1,16 @@
+.under_construction_site{
+  height: 80vh;
+  border-right: 2px solid #fff;
+  pointer-events: none;
+
+  // margin-top: .75rem;
+  .label {
+    transform: rotate(270deg);
+    transform-origin: right bottom;
+    padding: .5rem .75rem;
+    background: #fff;
+    border-radius: .25rem;
+    line-height: 1;
+    user-select: none;
+  }
+}

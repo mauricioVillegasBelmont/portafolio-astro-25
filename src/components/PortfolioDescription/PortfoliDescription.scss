@@ -1,0 +1,32 @@
+@use "./styles/extends/glass" as *;
+@use "./styles/extends/scroll" as *;
+.glass-btn{
+  // @extend %glass_secondary;
+  
+  background-repeat: repeat;
+}
+.decription{
+  width: 540px;
+  max-width: calc(100vw - 1.5rem);
+  max-height: 80vh;
+  overflow: auto;
+  @extend %scroll_barr;
+  &[open]{
+    animation-name: jump;
+    animation-duration: .5s;
+  }
+  &::backdrop{
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, .25);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(200%);
+  }
+  
+  100% {
+    transform: translateY(0%);
+  }
+}

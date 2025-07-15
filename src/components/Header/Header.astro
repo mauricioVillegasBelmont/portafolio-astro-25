@@ -1,0 +1,31 @@
+---
+import "./Header.scss"
+import "astro-breadcrumbs/breadcrumbs.scss";
+import "styles/elements/astro-breadcrumbs-config.scss";
+
+import { Icon } from "astro-icon/components";
+const { title, subtitle,clsasses } = Astro.props;
+import { Breadcrumbs } from "astro-breadcrumbs";
+---
+<header class:list={["header_card",clsasses??'']}>
+  <div class="header_card__content notch-br px-5 pt-3 pb-5 mb-1 flex flex-col gap-1">
+    {title && <h1 class="font-ubuntu text-lg lg:text-xl font-bold">{title}</h1>}
+    {subtitle && <h2 class="font-ubuntu text-sm lg:text-md">{subtitle}</h2>}
+    <Breadcrumbs> 
+      <Icon
+        name={'mdi:home'}
+        width={12}
+        height={12}
+        class={"inline-block"}
+        slot="index"
+      />
+      <Icon
+        name={'gridicons:chevron-right'}
+        width={12}
+        height={12}
+        class={"inline-block"}
+        slot="index"
+      />
+    </Breadcrumbs>
+  </div>
+</header>

@@ -1,0 +1,152 @@
+---
+import "styles/elements/details.scss";
+import "styles/elements/notch.scss";
+import "./Aboutme.scss";
+
+import { Icon } from "astro-icon/components";
+
+import Header from "components/Header/Header.astro"
+
+import { Portafolio, type PortafolioSchema } from "data/portfolio.data";
+
+const MY_YEARS = new Date().getFullYear() - 2015;
+const pages: PortafolioSchema[] = Portafolio.filter(
+	(item) => item.category == "page"
+);
+const cms: PortafolioSchema[] = Portafolio.filter((item) => item.category == "cms");
+const youtube: PortafolioSchema[] = Portafolio.filter(
+	(item) => item.category == "youtube"
+);
+---
+
+<article class="fixed top-0 left-0 mb-auto ml-auto">
+	<Header title="Mauricio Villegas Belmont" subtitle="Web Developer, Frontend y Diseñador gráfico" />
+
+	<details name="about" class="details__item relative header_card mb-1">
+		<summary class="details__sumary notch-br font-ubuntu text-lg relative px-5"
+			><Icon
+				name="mdi:chevron-right"
+				class:list={["inline-block", "mb-1"]}
+				width="24"
+				height="24"
+			/> Mas acerca de mi</summary
+		>
+		<div class="details__content container__scroll mr--5 ml--5 py--6 px--5 bg__black c__white">
+			<p class="mb--5">
+				Soy un <strong>desarrollador web</strong> y <strong
+					>diseñador frontend</strong
+				> con más de {MY_YEARS} años de experiencia en la creación de experiencias digitales
+				cautivadoras y funcionales. Cuento con amplia experiencia en el desarrollo
+				de sitios web con <strong>HTML, CSS</strong> y <strong
+					>JavaScript</strong
+				>, principalmente en servidores <strong>LAMP,</strong> así como en frameworks
+				<strong>CMS</strong> y <strong>LMS</strong> como Wordpress, Laravel, Joomla,
+				CodeIgniter y Moodle. También he incursionado un poco en servidores Node.js
+				con frameworks como Express.
+			</p>
+			<p class="mb--3">
+				Entre los principales proyectos en los que he participado se encuentran:
+			</p>
+			<ul class="bulletted__list middleScore pl--6">
+				<li class="mb--3">Cursos de capacitación.</li>
+				<li class="mb--3">Landing pages de marketing digital.</li>
+				<li class="mb--3">Presentaciones interactivas y sitios web.</li>
+				<li class="mb--3">Infografías digitales y responsivas.</li>
+			</ul>
+		</div>
+	</details>
+	<details name="about" class="details__item relative header_card mb-1">
+		<summary class="details__sumary notch-br font-ubuntu text-lg relative px-5">
+			<Icon
+				name="mdi:chevron-right"
+				class:list={["inline-block", "mb-1"]}
+				width="24"
+				height="24"
+			/> Habilidades</summary
+		>
+		<div class="details__content container__scroll mr--5 ml--5 py--6 px--5 bg__black c__white">
+			<h1 class="font-ubuntu font-bold fs--medium mb-5">
+				Entre mis habilidades figuran:
+			</h1>
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_ubuntu_dark" width="32" height="32" /> LAMP - Ubuntu
+					</dt>
+					<dd>apache2</dd>
+					<dd>mysql</dd>
+					<dd>wsl | bash</dd>
+				</dl>
+			</div>
+
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_php_dark" width="32" height="32" /> PHP - CRUD
+					</dt>
+					<dd>Frontend MVC</dd>
+					<dd>CMS - wordpres, europio, laravel, etc.</dd>
+				</dl>
+			</div>
+
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_js_dark" width="32" height="32" />
+						Javascript / Typescript
+					</dt>
+					<dd>jQuey</dd>
+					<dd>Node - webpack, Gulp, Etc</dd>
+					<dd>Node - express | NestJs - REST</dd>
+					<dd>React / React-router / Vite</dd>
+					<dd>Astro</dd>
+				</dl>
+			</div>
+
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_css_dark" width="32" height="32" />
+						CSS - styles / layout
+					</dt>
+					<dd>dart sass</dd>
+					<dd>OOCSS / SMACSS / ITCSS</dd>
+					<dd>BEM</dd>
+					<dd>Bootstrap / Tailwind</dd>
+				</dl>
+			</div>
+
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_design_dark" width="32" height="32" />
+						Diseño gráfico
+					</dt>
+					<dd>Photoshop</dd>
+					<dd>Illustrator</dd>
+					<dd>InDesign</dd>
+					<dd>AfterEffects</dd>
+					<dd>Captivate</dd>
+				</dl>
+			</div>
+
+			<div>
+				<dl class="mb-3 bullet">
+					<dt class="font-ubuntu flex font-semibold gap-3 mb-2 items-center">
+						<Icon name="icon_tools_dark" width="32" height="32" />
+						Otras habilidades
+					</dt>
+					<dd>Git</dd>
+					<dd>three.js</dd>
+					<dd>Lottie</dd>
+					<dd>svg/smil</dd>
+					<dd>webm/webp</dd>
+					<dd>Custom plugin wordpress</dd>
+					<dd>lighthouse report</dd>
+					<dd>Custom icon fonts</dd>
+				</dl>
+			</div>
+		</div>
+	</details>
+</article>
+

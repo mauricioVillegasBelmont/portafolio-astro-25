@@ -1,0 +1,122 @@
+ter {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+html,
+body {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body {
+
+  &,
+  & *,
+  & *::after,
+  & *::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+  }
+}
+
+:-webkit-any-link {
+  color: inherit;
+}
+
+:any-link {
+  color: inherit;
+}
+
+img,
+svg,
+canvas,
+video,
+object,
+picture {
+  user-select: none;
+  object-fit: cover;
+  display: block;
+}
+
+img,
+object,
+figure,
+picture,
+video {
+  @extend %cover_contain;
+}
+
+%cover_contain {
+  &.contain {
+    object-fit: contain;
+  }
+
+  &.cover {
+    object-fit: cover;
+  }
+}
+
+dialog,
+%dialog {
+  background-color: transparent;
+
+  &::backdrop {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, .25);
+  }
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  text-decoration: none;
+  background-color: transparent;
+  font: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  &>img,
+  &>svg,
+  &>canvas,
+  &>object,
+  &>figure,
+  &>picture,
+  &>video {
+    pointer-events: none;
+    border: none;
+  }
+}
+
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+hr {
+  border: 0;
+}

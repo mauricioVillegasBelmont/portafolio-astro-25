@@ -1,0 +1,5 @@
+@use "astro-breadcrumbs/breadcrumbs.scss" with ( /// Your config goes here
+  $size-font: .75rem,
+  $color-link: #37454e,
+  $color-separator: #292929,
+);

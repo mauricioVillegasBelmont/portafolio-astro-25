@@ -1,0 +1,57 @@
+---
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+import PortafolioTemplate from "layouts/PortafolioTemplate/PortafolioTemplate.astro";
+
+import Header from "components/Header/Header.astro"
+import NavSide from "components/Nav/NavSide.astro";
+import PortfoliDescription from "components/PortfolioDescription/PortfoliDescription.astro";
+import Iframe from "components/OnlineView/OnlineView.astro";
+
+import { Portafolio, type PortafolioSchema } from "data/portfolio.data";
+
+type schema = {
+  params: { id: string },
+  props: { [key:string]: any }
+}
+export function getStaticPaths():schema[] {
+  return Portafolio
+  .filter((element)=>element.active>0)
+  .map<schemaInterface[]>((element,index)=>{
+    const {id , ...props} = element;
+    return {
+      params: { id: id },
+      props:{
+        ...props
+      }
+    }
+  });
+}
+const { id } = Astro.params;
+const { name,source,device,view_url } = Astro.props;
+
+---
+
+
+<PortafolioTemplate title={`${name} - Portafolio`}>
+  <Header slot="header"/>
+  <PortfoliDescription slot="header"  {...Astro.props} />
+  {
+    ()=> {
+      switch (source) {
+        case "youtube":
+          return(<YouTube id={id} slot="iframe" class="relative w-screen max-w-full max-h-screen" />);
+          break;
+        case "online":
+        case "remote":
+          return(<Iframe url={view_url} slot="iframe" />);
+          break;
+        default:
+          return(<p>No local preview has been implemented yet.</p>);
+          break;
+      }
+    }
+  }
+  
+  <NavSide slot="tools" />
+</PortafolioTemplate>

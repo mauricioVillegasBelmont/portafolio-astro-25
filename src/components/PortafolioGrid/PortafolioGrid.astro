@@ -1,0 +1,97 @@
+---
+import "styles/elements/details.scss";
+import "styles/elements/notch.scss";
+import "./PortafolioGrid.scss";
+
+import Header from "components/Header/Header.astro"
+
+import "astro-breadcrumbs/breadcrumbs.scss";
+import "styles/elements/astro-breadcrumbs-config.scss";
+import { Breadcrumbs } from "astro-breadcrumbs";
+
+import Link from "components/Nav/Link.astro";
+
+import { Icon } from "astro-icon/components";
+import { Portafolio, type PortafolioSchema } from "data/portfolio.data";
+
+const pages: PortafolioSchema[] = Portafolio.filter(
+	(item) => item.category == "page" && item.active>0
+);
+const cms: PortafolioSchema[] = Portafolio.filter((item) => item.category == "cms");
+const youtube: PortafolioSchema[] = Portafolio.filter(
+	(item) => item.category == "youtube"
+);
+---
+
+<section class="absolute top-0 left-0 max-h-lvh">
+	<div class="">
+		<Header subtitle="Diseño Creatividad y Codigo." />
+	</div>
+	<details class="portafolioGrid details__item inset-0 lg:fixed lg:m-auto" open>
+		<summary class="details__sumary notch-br font-ubuntu text-lg relative px-5">Portafolio</summary>
+		<h1
+			class="title text-white notch-tr font-ubuntu flex font-semibold gap-3 items-center pl-5 pr-7 py-2">
+			<Icon name="icon_code" width="32" height="32" />
+			Micrositios:
+		</h1>
+		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+			{
+				pages.map(async (post) => {
+					return (
+						<div class="mb--3 pb--3">
+							<Link href={`/portafolio/${post.id}`} text={post.name}	classes="hover:underline" />
+							<small class="block ml-3 text-gray-700">
+								{post.customer}- {post.device}
+							</small>
+						</div>
+					);
+				})
+			}
+		</div>
+		<h1
+			class="title text-white notch-tr font-ubuntu flex font-semibold gap-3 items-center pl-5 pr-7 py-2">
+			<Icon name="icon_system" width="32" height="32" />
+			CMS:
+		</h1>
+		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+			{
+				cms.map(async (post) => {
+					return (
+						<div class="mb--3 pb--3">
+							<Link href={`/portafolio/${post.id}`} text={post.name}	classes="hover:underline" />
+							<small class="block ml-3 text-gray-700">
+								{post.customer}- {post.device}
+							</small>
+						</div>
+					);
+				})
+			}
+		</div>
+		<h1
+			class="title text-white notch-tr font-ubuntu flex font-semibold gap-3 items-center pl-5 pr-7 py-2">
+			<Icon name="icon_youtube" width="32" height="32" />
+			Multimedia - Videos:
+		</h1>
+		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+			{
+				youtube.map(async (post) => {
+					return (
+						<div class="mb--3 pb--3">
+							<a
+								href={`https://www.youtube.com/watch?v=${post.id}`}
+								class=" hover:underline"
+								target="_blank"
+								class="my_links"
+								rel="noopener norefer">
+								{post.name}{" "}
+							</a>
+							<small class="block ml-3 text-gray-700">
+								{post.customer}- {post.device}
+							</small>
+						</div>
+					);
+				})
+			}
+		</div>
+	</details>
+</section>

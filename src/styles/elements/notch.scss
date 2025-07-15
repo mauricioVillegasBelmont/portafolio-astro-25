@@ -1,0 +1,45 @@
+.notch {
+  overflow: hidden;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+
+  &-br,&-rb {
+    @extend .notch;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      0 100%
+    );
+  }
+  &-bl,&-lb {
+    @extend .notch;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(0% + 20px) 100%,
+      0% calc(100% - 20px)
+    );
+  }
+
+  &-tl,&-lt {
+    @extend .notch;
+    clip-path: polygon(
+      calc(0% + 20px) 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 calc(0% + 20px));
+  }
+  &-tr,&-rt {
+    @extend .notch;
+    clip-path: polygon(
+      calc(100% - 20px) 0%,
+      100% calc(100% - 20px),
+      100% 100%,
+      0 100%,
+      0 0)
+  }
+}

@@ -1,0 +1,16 @@
+@use "./styles/extends/glass" as *;
+.contact {
+  @extend %glass_primary;
+}
+.side-nav{
+  a[disabled="true"]{
+    cursor: auto;
+    pointer-events: none;
+    color: #9b9ba3;
+  }
+}
+.portafolio {
+  & .my_links span{
+    display: none;
+  }
+}

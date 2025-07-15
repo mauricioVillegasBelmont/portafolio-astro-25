@@ -1,0 +1,18 @@
+---
+import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
+import TreeForest from "components/forest_three/TreeForest.astro";
+import Under_construction_site from "components/under_construction_site/under_construction_site.astro";
+import NavSide from "components/Nav/NavSide.astro";
+
+// @ts-ignore
+import Aboutme from "components/Aboutme/Aboutme.astro";
+const base_url = import.meta.env.BASE_url_URL;
+console.log(`base_url ${base_url}`)
+---
+
+<BaseTemplate title="home">
+	<TreeForest slot="background" />
+	<Under_construction_site slot="main" />
+	<Aboutme slot="main" />
+	<NavSide slot="main" />
+</BaseTemplate>
