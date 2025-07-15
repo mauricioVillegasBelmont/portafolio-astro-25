@@ -11,11 +11,11 @@ console.log(view_url)
 <aside class="fixed right-0 top-0 w-fit z-1 mt-auto flex flex-col gap-1">
 	<button class="glass-btn flex items-center border-0 p-3 text-white bg-rose-800 hover:bg-rose-500 hover:text-gray-500" data-pushbar-target="main_menu">Detalles:</button>
 </aside>
-<dialog id="dialog" class="decription font-ubuntu fixed inset-0 m-auto rounded-md shadow-md" data-pushbar-id="main_menu">
-	<div class="py-6 px-5 bg-white">
+<dialog id="dialog" class="description font-ubuntu fixed inset-0 m-auto rounded-md " data-pushbar-id="main_menu">
+	<div class="description__container bg-white notch-bl relative">
 		<div
-			class="flex flex-wrap justify-between gap-1 items-start mb-3">
-			<div class="">
+			class="sticky top-0 flex flex-wrap justify-between gap-1 items-start bg-white px-5 py-5">
+			<div class="dialog__header">
 				<h1
 					class="text-xl text-bold underline underline-offset-2">
 					{name}
@@ -42,31 +42,32 @@ console.log(view_url)
 				/>
       </button>
 		</div>
-		<hr class="w-80 m-7 mx-auto" />
-		{paths &&
-			<h1 class="text-lg font-bold mb-2">Views:</h1>
-			<ul class="list-disc pl-8 text-gray-600 font-light text-rose-800 underline">
-				<li class="mb-1 ">
-					<a target="iframe" href={view_url} >Home</a>
-				</li>
-				{Object.keys(paths).map((key) => 
+		<div class="px-6 py-5">
+			{paths &&
+				<h1 class="text-lg font-bold mb-2">Views:</h1>
+				<ul class="list-disc pl-8 text-gray-600 font-light text-rose-800 underline">
 					<li class="mb-1 ">
-						<a target="iframe" href={paths[key]}>{key}</a>
+						<a target="iframe" href={view_url} >Home</a>
 					</li>
-				)}
-			</ul>
-			<hr class="w-80 m-7 mx-auto" />
-		}
-		{features &&
-			<h1 class="text-lg font-bold mb-2">Caracteristicas:</h1>
-			<ul class="list-disc pl-8 text-gray-600 font-light">
-				{features.map((item: string) => <li class="mb-1 ">{item}</li>)}
-			</ul>
-			<hr class="w-80 m-7 mx-auto" />
-		}
-		<div class="description-container py--5">
-			<h1 class="text-lg font-bold mb-2">Description:</h1>
-			<Fragment set:html={description} />
+					{Object.keys(paths).map((key) => 
+						<li class="mb-1 ">
+							<a target="iframe" href={paths[key]}>{key}</a>
+						</li>
+					)}
+				</ul>
+				<hr class="w-80 m-7 mx-auto" />
+			}
+			{features &&
+				<h1 class="text-lg font-bold mb-2">Caracteristicas:</h1>
+				<ul class="list-disc pl-8 text-gray-600 font-light">
+					{features.map((item: string) => <li class="mb-1 ">{item}</li>)}
+				</ul>
+				<hr class="w-80 m-7 mx-auto" />
+			}
+			<div class="description-container py--5">
+				<h1 class="text-lg font-bold mb-2">Description:</h1>
+				<Fragment set:html={description} />
+			</div>
 		</div>
 	</div>
 </dialog>
