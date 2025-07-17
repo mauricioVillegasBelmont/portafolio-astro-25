@@ -22,6 +22,9 @@ export default {
         '2xs': '.5rem',
         '3xs': '.325rem',
       },
+			listStyleType: {
+				middlescore: "'-'",
+			},
 		},
 	},
 	plugins: [],

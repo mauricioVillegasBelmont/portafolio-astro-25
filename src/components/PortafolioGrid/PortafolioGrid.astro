@@ -3,7 +3,7 @@ import "styles/elements/details.scss";
 import "styles/elements/notch.scss";
 import "./PortafolioGrid.scss";
 
-import Header from "components/Header/Header.astro"
+import Header from "components/Header/Header.astro";
 
 import "astro-breadcrumbs/breadcrumbs.scss";
 import "styles/elements/astro-breadcrumbs-config.scss";
@@ -15,11 +15,13 @@ import { Icon } from "astro-icon/components";
 import { Portafolio, type PortafolioSchema } from "data/portfolio.data";
 
 const pages: PortafolioSchema[] = Portafolio.filter(
-	(item) => item.category == "page" && item.active>0
+	(item) => item.category == "page" && item.active > 0
 );
-const cms: PortafolioSchema[] = Portafolio.filter((item) => item.category == "cms");
+const cms: PortafolioSchema[] = Portafolio.filter(
+	(item) => item.category == "cms" && item.active > 0
+);
 const youtube: PortafolioSchema[] = Portafolio.filter(
-	(item) => item.category == "youtube"
+	(item) => item.category == "youtube" && item.active > 0
 );
 ---
 
@@ -28,21 +30,39 @@ const youtube: PortafolioSchema[] = Portafolio.filter(
 		<Header subtitle="Diseño Creatividad y Codigo." />
 	</div>
 	<details class="portafolioGrid details__item inset-0 lg:fixed lg:m-auto" open>
-		<summary class="details__sumary notch-br font-ubuntu text-lg relative px-5">Portafolio</summary>
+		<summary class="details__sumary notch-br font-ubuntu text-lg relative px-5"
+			>Portafolio</summary
+		>
 		<h1
 			class="title text-white notch-tr font-ubuntu flex font-semibold gap-3 items-center pl-5 pr-7 py-2">
 			<Icon name="icon_code" width="32" height="32" />
 			Micrositios:
 		</h1>
-		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+		<div
+			class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
 			{
 				pages.map(async (post) => {
 					return (
 						<div class="mb--3 pb--3">
-							<Link href={`/portafolio/${post.id}`} text={post.name}	classes="hover:underline" />
+							<Link
+								href={`/portafolio/${post.id}`}
+								text={post.name}
+								classes="hover:underline"
+							/>
 							<small class="block ml-3 text-gray-700">
-								{post.customer}- {post.device}
+								{post.customer} - {post.device}
 							</small>
+							{post.paths && (
+								<ul class="text-sm text-gray-600 list-middlescore my-1 ml-3 pl-3">
+									{Object.entries(post.paths).map((k: string[]) => {
+										return (
+											<li class="before:pr-2 underline">
+												{k[0]}
+											</li>
+										);
+									})}
+								</ul>
+							)}
 						</div>
 					);
 				})
@@ -53,15 +73,31 @@ const youtube: PortafolioSchema[] = Portafolio.filter(
 			<Icon name="icon_system" width="32" height="32" />
 			CMS:
 		</h1>
-		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+		<div
+			class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
 			{
 				cms.map(async (post) => {
 					return (
 						<div class="mb--3 pb--3">
-							<Link href={`/portafolio/${post.id}`} text={post.name}	classes="hover:underline" />
+							<Link
+								href={`/portafolio/${post.id}`}
+								text={post.name}
+								classes="hover:underline"
+							/>
 							<small class="block ml-3 text-gray-700">
-								{post.customer}- {post.device}
+								{post.customer} - {post.device}
 							</small>
+							{post.paths && (
+								<ul class="text-sm text-gray-600 list-middlescore my-1 ml-3 pl-3">
+									{Object.entries(post.paths).map((k: string[]) => {
+										return (
+											<li class="before:pr-2 underline">
+												{k[0]}
+											</li>
+										);
+									})}
+								</ul>
+							)}
 						</div>
 					);
 				})
@@ -72,7 +108,8 @@ const youtube: PortafolioSchema[] = Portafolio.filter(
 			<Icon name="icon_youtube" width="32" height="32" />
 			Multimedia - Videos:
 		</h1>
-		<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
+		<div
+			class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 px-3 pb-5 pt-2">
 			{
 				youtube.map(async (post) => {
 					return (

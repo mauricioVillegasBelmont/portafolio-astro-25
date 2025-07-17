@@ -6,7 +6,7 @@ export interface PortafolioSchema{
   name:string;
   customer:string;
   view_url:string;
-  paths?:{}
+  paths?:{[key:string]:string}
   online_url?:string;
   features: string[];
   description: null | string;
@@ -126,13 +126,16 @@ export const Portafolio:PortafolioSchema[] = [
     "id": "cin124",
     "source":"remote",
     "category": "page",
-    "name": "cin124",
+    "name": "Cinepolis | Wish: El Poder de los Deseos",
     "customer": "losdeidea.com.mx",
     "device": "responsive",
-    "view_url": "https://cin124.d-link.mx/",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/",
+    paths:{
+      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/registro/",
+    },
     "features": ["Promo","Marketing game contest","Admin panel"],
     "description": "<p>Mi experiencia laboral con Idea ha sido sumamente enriquecedora. Trabajar con esta plataforma me ha brindado la oportunidad de crecer tanto en el diseño del layout como en la programación, además de permitirme desarrollar habilidades en trabajo en equipo al colaborar con otros desarrolladores.</p>\n  <p>La mayoría de los micrositios en los que he participado se caracterizan por incluir un modelo de <strong>concurso de juegos,</strong> donde el objetivo principal es <strong>obtener un puntaje alto</strong> para ser seleccionado.</p>\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 0
+    "active": 1
   },
   {
     "id": "prom990",
@@ -150,25 +153,31 @@ export const Portafolio:PortafolioSchema[] = [
     "id": "prom943",
     "source":"remote",
     "category": "page",
-    "name": "prom943",
+    "name": "Cinepolis | Avatar: El Camino del Agua",
     "customer": "losdeidea.com.mx",
     "device": "responsive",
-    "view_url": "https://prom943.d-link.mx/",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/",
+    paths:{
+      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/registro/",
+    },
     "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>Este micrositio fue parte de una promoción para la cual la propuesta original contemplaba que las <strong>luciérnagas</strong> permanecieran <strong>estáticas</strong> dentro de las imágenes de fondo. Esta idea, aunque inicialmente solo una sugerencia, resultó ser un elemento clave para cautivar aún más al cliente con el diseño, proporcionando un efecto visual muy agradable.</p>\n  <p>Es importante destacar que, si bien la librería <strong>particles.js</strong> es bastante conocida, su popularidad se encuentra principalmente entre desarrolladores frontend en lugar de diseñadores gráficos. Por lo tanto, tanto para los diseñadores como para el cliente, fue una grata sorpresa descubrir el potencial de esta herramienta.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 0
+    "description": "<p>Este micrositio fue parte de una promoción para la cual la propuesta original contemplaba que las <strong>luciérnagas</strong> permanecieran <strong>estáticas</strong> dentro de las imágenes de fondo. Esta idea, aunque inicialmente solo una sugerencia, resultó ser un elemento clave para cautivar aún más al cliente con el diseño, proporcionando un efecto visual muy agradable.</p>\n<p>Es importante destacar que, si bien la librería <strong>particles.js</strong> es bastante conocida, su popularidad se encuentra principalmente entre desarrolladores frontend en lugar de diseñadores gráficos. Por lo tanto, tanto para los diseñadores como para el cliente, fue una grata sorpresa descubrir el potencial de esta herramienta.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+    "active": 1
   },
   {
     "id": "prom1005",
     "source":"remote",
     "category": "page",
-    "name": "prom1005",
+    "name": "JAC - PODER UNIFICADO",
     "customer": "losdeidea.com.mx",
     "device": "responsive",
-    "view_url": "https://prom1005.d-link.mx/",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1005-view/",
+    paths:{
+      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1015-view/registro/",
+    },
     "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>El diseño de este layout podría considerarse como fantasía debido a su enfoque en un flujo de navegación donde los desplazamientos se producen dentro de secciones específicas del sitio en lugar de a lo largo del body/Window tradicional. Además, el diseño incluye varios elementos decorativos que añaden un toque distintivo a la promoción.</p>\n  <p>La promoción en sí constaba de una <strong>trivia,</strong> la cual estaba disponible para aquellos que <strong>registraran un ticket</strong> para una prueba de manejo en una concesionaria autorizada de JAC. Los participantes con el mayor número de respuestas correctas en el menor tiempo posible tenían la oportunidad de ganar un premio designado por la compañía.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 0
+    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
+    "active": 1
   },
   {
     "id": "prom991",
@@ -181,6 +190,21 @@ export const Portafolio:PortafolioSchema[] = [
     "features": ["Promo","Marketing game contest","Admin panel"],
     "description": "<p>El diseño y layout de este proyecto representó un cambio significativo para los micrositios posteriores, ya que marcó el inicio de una <strong>colaboración más estrecha</strong> entre los equipos de <strong>programación y diseño.</strong> Nos organizamos para identificar puntos en común en los que ambas áreas pudieran retroalimentarse mutuamente, lo que resultó en un diseño más cohesivo y eficiente.</p>\n  <ul class=\"bulletted__detailed_list bullet pl--6 mb--5\">\n    <li>flujo del layout.</li>\n    <li>máximo de contenedores, y qué pasa si la pantalla es mayor</li>\n    <li>composiciones tipográficas lo que sí y lo que no a través del diseño responsivo</li>\n    <li>decoraciones de fantasía a través del diseño responsivo</li>\n  </ul>\n  <p>Además, este proyecto estableció el estándar para el flujo de diseño en los micrositios y promociones subsiguientes, sirviendo como referencia para futuros proyectos.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
     "active": 0
+  },
+  {
+    "id": "prom955",
+    "source":"remote",
+    "category": "page",
+    "name": "Entrenamiento Espacial",
+    "customer": "losdeidea.com.mx",
+    "device": "responsive",
+    "view_url": "https://prom991.d-link.mx/",
+    paths:{
+      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view/registro/",
+    },
+    "features": ["Promo","Marketing game contest","Admin panel"],
+    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
+    "active": 1
   },
   {
     "id": "g73002",
@@ -198,12 +222,27 @@ export const Portafolio:PortafolioSchema[] = [
     "id": "prom1009",
     "source":"remote",
     "category": "page",
-    "name": "prom1009",
+    "name": "Disney 100 / Album",
     "customer": "losdeidea.com.mx",
     "device": "responsive",
-    "view_url": "https://prom1009.d-link.mx/",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/",
+    paths:{
+      "album": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/album/",
+    },
     "features": ["Promo","Marketing game contest","Trading cart","Admin panel"],
     "description": "<p>Una de nuestras promociones más recientes involucró el desarrollo frontend de un <strong>carrito de compra,</strong> permitiendo a los usuarios realizar intercambios de elementos basados en dos tipos de valores: <strong>monedas</strong> obtenidas mediante la participación en <strong>minijuegos</strong> y poder <strong>comprar tarjetas</strong> dentro de un <strong>álbum.</strong> El puntaje obtenido determinaba la cantidad de monedas ganadas.</p>\n  otro\n  <p>A su vez,un segundo minijuego proporcionaba un cierto número de <strong>tarjetas al azar</strong> para ayudarte a completar el álbum, y la acumulación de tarjetas repetidas proporcionaba otra base para poder intercambiarlas por tarjetas que aún no han sido obtenidas</p>\n\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+    "active": 1
+  },
+  {
+    "id": "prom1039",
+    "source":"remote",
+    "category": "page",
+    "name": "¡Regresa a clases con Stitch!",
+    "customer": "losdeidea.com.mx",
+    "device": "responsive",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1039-view/",
+    "features": ["Promo","Marketing game contest","Trading cart","Admin panel"],
+    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
     "active": 0
   },
   {
@@ -308,7 +347,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"Micrositio - Kia | Insideout",
+    name:"Kia | Insideout - ¡UN VIAJE EMOCIONANTE!",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1024-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -320,7 +359,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"Micrositio - Deadpool&wolveine | Heinz",
+    name:"Deadpool&wolveine | Heinz - HEINZ BROMANCE",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1022-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -332,7 +371,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"PREPARAR TU CAFÉ",
+    name:"NESPRESSO | PREPARAR TU CAFÉ",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-nb2b025-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -344,7 +383,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"Micrositio - Stitch | Member's Mark",
+    name:"Stitch | Member's Mark - Aventura Member's Mark",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1027-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -356,7 +395,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"Micrositio - Heinz | ESPN",
+    name:"Heinz | ESPN - ¡Conviértete en el MVP Heinz!",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1036-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -368,7 +407,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"Micrositio - Promocional Stitch",
+    name:"Stitch | Laboratorio de Juegos",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-ptd079-view/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -380,7 +419,7 @@ export const Portafolio:PortafolioSchema[] = [
     source: "remote",
     category:"page",
     device:"responsive",
-    name:"promo - scrollytelling Hisense | NBA",
+    name:"Hisense | NBA - scrollytelling - ¡JUGADA HISENSE!",
     customer:"losdeidea.com.mx",
     view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-scrollytelling/",
     features: ['Game Contest Challenge', "Trivia"],
@@ -399,4 +438,5 @@ export const Portafolio:PortafolioSchema[] = [
     description: '<p>Sitio promocional en <strong>WordPress,</strong> Landing Page para registro de clientes mediante el <strong>CRM HubSpot.</strong></p>',
     active: 1,
   },
+  
 ]
