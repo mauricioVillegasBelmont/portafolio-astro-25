@@ -1,0 +1,12 @@
+---
+import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
+import ThreeComponent from "components/three_env/ThreeComponent.astro";
+
+
+const base_url = import.meta.env.BASE_url_URL;
+console.log(`base_url ${base_url}`);
+---
+
+<BaseTemplate title="home">
+  <ThreeComponent slot="background" />
+</BaseTemplate>

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import EventEmitter from "components/three_env.back/core/EventEmiter";
+import EventEmitter from "libs/three_env/core/EventEmiter";
 type args = {
   width?: number;
   height?: number;

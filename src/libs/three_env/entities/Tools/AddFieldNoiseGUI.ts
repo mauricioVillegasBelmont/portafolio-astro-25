@@ -1,6 +1,6 @@
 
-import type TerrainGenerator from "../entities/Field/TerrainGenerator";
-import { configParamsHook } from "../hooks/configParamsHook";
+import type TerrainGenerator from "libs/three_env/entities/Field/TerrainGenerator";
+import { configParamsHook } from "libs/three_env/entities/Field//hooks/configParamsHook";
 
 
 import {gui} from './GUI'

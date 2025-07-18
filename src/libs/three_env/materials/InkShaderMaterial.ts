@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { ThreeUtils } from "components/three_env.back/utils/ThreeUtils";
+import { ThreeUtils } from "libs/three_env/utils/ThreeUtils";
 
 import vertexShader from "./inkShader/vertexShader.glsl?raw";
 import fragmentShader from "./inkShader/fragmentShader.glsl?raw";

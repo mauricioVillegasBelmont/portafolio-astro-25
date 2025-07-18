@@ -1,7 +1,9 @@
 import * as THREE from "three";
 import { FlyControls } from "three/addons/controls/FlyControls.js";
-import EventEmitter from "components/three_env.back/core/EventEmiter";
-import type { AnimateCustomEvent } from "./Interfaces";
+import EventEmitter from "libs/three_env/core/EventEmiter";
+
+
+export interface AnimateCustomEvent extends CustomEvent<{clock: any;}>{}
 type args = {
   speed: number;
   renderer: THREE.WebGLRenderer;
