@@ -6,25 +6,37 @@ interface Props {
 	text?: string;
 	href: string;
 	classes?: string;
+	rel?: "external" | "author";
 	icon?: {
 		name: string;
 		size: number;
 		classes?: string;
 	};
 }
-const path = import.meta.env.BASE_URL??'';
-const { text, href, icon, classes, ...rest } = Astro.props as Props;
+
+const { text, href, icon, classes, rel, ...rest } = Astro.props as Props;
+let path = "";
+if (!rel) {
+	path = import.meta.env.BASE_URL ?? "";
+}
 ---
 
-<a href={`${path}${href}`} class:list={["my_links", classes ?? ""]} {...rest}>
-	{icon &&
-		<Icon
-			name={icon.name}
-			width={icon.size}
-			height={icon.size}
-			class:list={["block", icon.classes]}
-			data-navLink
-		/>
+<a
+	href={`${path}${href}`}
+	class:list={["my_links", classes ?? ""]}
+	rel={rel}
+	target={rel?"_blank":"_self"}
+	{...rest}>
+	{
+		icon && (
+			<Icon
+				name={icon.name}
+				width={icon.size}
+				height={icon.size}
+				class:list={["block", icon.classes]}
+				data-navLink
+			/>
+		)
 	}
 	{text && <span>{text}</span>}
 </a>

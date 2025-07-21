@@ -22,6 +22,7 @@ export const navData = [
   {
     text: 'Mi Curriculo',
     href: 'https://docs.google.com/document/d/1jIhUBwKHxOBfE9lO3590M-J-0DH_Z03SBiTgbt9l_ko',
+    rel:'external',
     classes: 'hover:text-gray-700 text-2xs lg:text-xs',
     icon:  {
       name: 'mdi:file-account-outline',
@@ -32,6 +33,7 @@ export const navData = [
   {
     text: 'Mi github',
     href: 'https://github.com/mauricioVillegasBelmont',
+    rel:'external',
     classes: 'hover:text-gray-700 text-2xs lg:text-xs',
     icon:  {
       name: 'mdi:github',
@@ -42,6 +44,7 @@ export const navData = [
   {
     text: 'Mi Roadmap',
     href: 'https://roadmap.sh/u/miau',
+    rel:'external',
     classes: 'hover:text-gray-700 text-2xs lg:text-xs',
     icon:  {
       name: 'icon_roadmaps',
@@ -52,6 +55,7 @@ export const navData = [
   {
     text: 'Mi Correo',
     href: 'mailto:mauricio.vi.be@gmail.com',
+    rel:'author',
     classes: 'hover:text-gray-700 text-2xs lg:text-xs',
     icon:  {
       name: 'mdi:gmail',

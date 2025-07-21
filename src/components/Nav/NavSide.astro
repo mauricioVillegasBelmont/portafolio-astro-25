@@ -17,6 +17,7 @@ import { navData } from "data/navData.ts";
 					href={item.href}
 					icon={item.icon}
 					classes={item.classes}
+					rel={(item.rel as "external" | "author" | undefined)}
 					data-navLink
 				/>
 			))
