@@ -198,7 +198,7 @@ export const Portafolio:PortafolioSchema[] = [
     "name": "Entrenamiento Espacial",
     "customer": "losdeidea.com.mx",
     "device": "responsive",
-    "view_url": "https://prom991.d-link.mx/",
+    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view",
     paths:{
       "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view/registro/",
     },
@@ -255,9 +255,9 @@ export const Portafolio:PortafolioSchema[] = [
     "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/",
     online_url: "https://parentesis.com/",
     paths:{
-      "Quizz": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/quizz/",
-      "Inline Query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/inline_query/",
-      "Infographics":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/infographics/",
+      "quizz": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/quizz/",
+      "inline-query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/inline_query/",
+      "infographics":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/infographics/",
     },
     "features": [
       'Custom CMS',
@@ -292,7 +292,7 @@ export const Portafolio:PortafolioSchema[] = [
     "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/",
     online_url: "https://harmonia.la/",
     paths:{
-      "Inline Query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/inline_query/",
+      "inline-query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/inline_query/",
     },
     "features": [
       'Custom CMS',

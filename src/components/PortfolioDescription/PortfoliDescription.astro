@@ -4,8 +4,8 @@ import "./PortfoliDescription.scss"
 
 import Link from "components/Nav/Link.astro";
 import { Icon } from "astro-icon/components";
-const { name, customer, features, description,view_url,paths, online_url } = Astro.props;
-console.log(view_url)
+const {parent_url, name, customer, features, description,view_url,paths, online_url } = Astro.props;
+console.log(parent_url)
 ---
 
 <aside class="fixed right-0 top-0 w-fit z-1 mt-auto flex flex-col gap-1">
@@ -47,11 +47,17 @@ console.log(view_url)
 				<h1 class="text-lg font-bold mb-2">Views:</h1>
 				<ul class="list-disc pl-8 text-gray-600 font-light text-rose-800 underline">
 					<li class="mb-1 ">
-						<a target="iframe" href={view_url} >Home</a>
+						<a href={parent_url} >Home</a>
 					</li>
 					{Object.keys(paths).map((key) => 
 						<li class="mb-1 ">
-							<a target="iframe" href={paths[key]}>{key}</a>
+							<a href={`${parent_url}?search=${key}`}>{
+								key.replace('-', ' ')
+								.replace(
+									/\w\S*/g,
+									text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+								)
+							}</a>
 						</li>
 					)}
 				</ul>

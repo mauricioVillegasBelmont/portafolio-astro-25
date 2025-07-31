@@ -1,9 +1,9 @@
 ---
-import { YouTube } from '@astro-community/astro-embed-youtube';
+import { YouTube } from "@astro-community/astro-embed-youtube";
 
 import PortafolioTemplate from "layouts/PortafolioTemplate/PortafolioTemplate.astro";
 
-import Header from "components/Header/Header.astro"
+import Header from "components/Header/Header.astro";
 import NavSide from "components/Nav/NavSide.astro";
 import PortfoliDescription from "components/PortfolioDescription/PortfoliDescription.astro";
 import Iframe from "components/OnlineView/OnlineView.astro";
@@ -11,47 +11,63 @@ import Iframe from "components/OnlineView/OnlineView.astro";
 import { Portafolio, type PortafolioSchema } from "data/portfolio.data";
 
 type schema = {
-  params: { id: string },
-  props: { [key:string]: any }
-}
-export function getStaticPaths():schema[] {
-  return Portafolio
-  .filter((element)=>element.active>0)
-  .map<schemaInterface[]>((element,index)=>{
-    const {id , ...props} = element;
-    return {
-      params: { id: id },
-      props:{
-        ...props
-      }
-    }
-  });
+	params: { id: string };
+	props: { [key: string]: any };
+};
+export function getStaticPaths(): schema[] {
+	const activePaths = Portafolio.filter((element) => element.active > 0);
+	const paths = activePaths.map<schema>((element: PortafolioSchema) => {
+		const { id, ...props } = element;
+		return {
+			params: { id: id },
+			props: {
+				...props,
+			},
+		};
+	});
+	return paths;
 }
 const { id } = Astro.params;
-const { name,source,device,view_url } = Astro.props;
+const { name, source, device, view_url, paths = {} } = Astro.props;
 
+export const prerender = false;
+
+const path_keys = Object.keys(paths).map<string>((item) => {
+	return item;
+});
+const search_therm = Astro.url.searchParams.get("search") || "";
+const view = path_keys.includes(search_therm) ? paths[search_therm] : view_url;
 ---
 
-
 <PortafolioTemplate title={`${name} - Portafolio`}>
-  <Header slot="header"/>
-  <PortfoliDescription slot="header"  {...Astro.props} />
-  {
-    ()=> {
-      switch (source) {
-        case "youtube":
-          return(<YouTube id={id} slot="iframe" class="relative w-screen max-w-full max-h-screen" />);
-          break;
-        case "online":
-        case "remote":
-          return(<Iframe url={view_url} slot="iframe" />);
-          break;
-        default:
-          return(<p>No local preview has been implemented yet.</p>);
-          break;
-      }
-    }
-  }
-  
-  <NavSide slot="tools" />
+	<Header slot="header" />
+	<PortfoliDescription
+		slot="header"
+		parent_url={Astro.url.pathname}
+		{...Astro.props}
+	/>
+	{
+		() => {
+			switch (source) {
+				case "youtube":
+					return (
+						<YouTube
+							id={id}
+							slot="iframe"
+							class="relative w-screen max-w-full max-h-screen"
+						/>
+					);
+					break;
+				case "online":
+				case "remote":
+					return <Iframe url={view} slot="iframe" />;
+					break;
+				default:
+					return <p>No local preview has been implemented yet.</p>;
+					break;
+			}
+		}
+	}
+
+	<NavSide slot="tools" />
 </PortafolioTemplate>
