@@ -1,12 +1,15 @@
-type RangeNumber = -1 | 0 | 1;
+export type RangeNumber = -1 | 0 | 1;
+export type RangeNumberRow = [RangeNumber,RangeNumber];
+export type TopoMap = [RangeNumberRow,RangeNumberRow];
+export interface TopoMapData{image: string, rotationSteps: number, direction:'CW'|'CCW' }
 
-function get_map(code:[RangeNumber[],RangeNumber[]]){
+export default function get_map(map:TopoMap):TopoMapData{
   const _keys = [
     'C',
     'B',
     'A',
   ]
-  const name = (code.flat().map((value)=>{
+  const name = (map.flat().map((value)=>{
     const k = value+1 
     return _keys[k]
   })).join("")
@@ -42,17 +45,17 @@ function get_map(code:[RangeNumber[],RangeNumber[]]){
     'tile_CCAB':['CCAB','ACBC','BACC','CBCA'],
     'tile_CCBA':['CCBA','BCAC','ABCC','CACB'],
   }
-  // var test = []
-  // Object.entries(img_keys).forEach(([key, value]) => {
-  //   test = [...test,...value]
-  // });
-  // const duplicates = [];
-  // test.forEach((element, index) => {
-  //   if (test.indexOf(element) !== index) {
-  //     duplicates.push(element);
-  //   }
-  // });
-  // console.log(test)
-  // console.log(duplicates)
+
+  
+  let topoMapData:TopoMapData|undefined ;
+  Object.entries(img_keys).forEach(([key, value]) => {
+    if(value.includes(name)) {
+      topoMapData ={image: key, rotationSteps: value.indexOf(name), direction:'CW' };
+      return;
+    }
+  })
+  
+  if(topoMapData) return topoMapData as TopoMapData;
+  throw new Error('TopographyMap not found')
   
 }

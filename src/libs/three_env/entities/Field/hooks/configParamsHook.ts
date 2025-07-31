@@ -1,16 +1,65 @@
-import type { ThreeTerrainUpdateParams } from "../entities/Field/chunks/LandChunk";
+import type { ThreeTerrainUpdateParams,noiseParams } from "libs/three_env/entities/Field/chunks/LandChunk";
+import { createNoise2D, type NoiseFunction2D } from "simplex-noise";
+import alea from 'alea';
 
-export function configParamsHook(){
-  const fieldConfigNoiseParams: Required<ThreeTerrainUpdateParams> = {
-    amplitude: 5,
-    persistance: 1.20,
-    lacunarity: 1.5,
-    octaves: 5,
-    frequency: { x: 0.125, z: 0.125 },
+const createConfigParamsHook = () => {
+  let maxOctaves = 5;
+  const configParams: ThreeTerrainUpdateParams = {
+    base:{
+      amplitude: 5,
+      persistance: 1.2,
+      lacunarity: 1.5,
+      octaves: 1,
+      frequency: 0.3,
+      level:-1,
+    },
+    hills:{
+      amplitude: 5,
+      persistance: 1.2,
+      lacunarity: 1.5,
+      octaves: 1,
+      frequency: 0.3,
+      level:-1,
+    },
+    mountains:{
+      amplitude: 5,
+      persistance: 1.2,
+      lacunarity: 1.5,
+      octaves: 1,
+      frequency: 0.3,
+      level:-1,
+    },
+    grass:{
+      amplitude: 5,
+      persistance: 1.2,
+      lacunarity: 1.5,
+      octaves: 1,
+      frequency: 0.3,
+      level:-1,
+    },
+    trees:{
+      amplitude: 5,
+      persistance: 1.2,
+      lacunarity: 1.5,
+      octaves: 1,
+      frequency: 0.3,
+      level:-1,
+    },
   };
+  const noise =[]
+  for (let i = 0; i < maxOctaves; i++) {
+    noise[i] = createNoise2D(alea('seed'));
+  }
 
 
   return {
-    fieldConfigNoiseParams:fieldConfigNoiseParams,
+    maxOctaves:maxOctaves,
+    configParams:configParams,
+    updateConfigParams:(key:keyof ThreeTerrainUpdateParams='base',prop:keyof noiseParams, value:number )=>{
+      configParams[key][prop] = value
+    },
+    noise:noise,
   }
 }
+
+export const configParamsHook = createConfigParamsHook();

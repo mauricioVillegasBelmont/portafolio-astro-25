@@ -1,26 +1,27 @@
 import * as THREE from "three";
 import type { NoiseFunction2D } from "simplex-noise";
 import { isMobile } from "mobile-device-detect";
+import { configParamsHook } from "libs/three_env/entities/Field/hooks/configParamsHook";
+
 import { LandMaterialShader } from "libs/three_env/materials/InkShaderMaterial";
 // import {LandMaterialShader} from "@/app/hooks/InkShaderMaterial"
 
 
-
+export interface noiseParams{
+  amplitude: number;
+  persistance: number;
+  lacunarity: number;
+  octaves: number;
+  frequency: number;
+  level:number;
+}
 export interface ThreeTerrainUpdateParams {
-  amplitude?: number;
-  persistance?: number;
-  lacunarity?: number;
-  octaves?: number;
-  frequency?: {
-    x: number;
-    z: number;
-  };
+  [key:string]:noiseParams
 }
 
 export interface LandChunkArgs {
   chunkSize?: number;
   position?: THREE.Object3D["position"];
-  params?: ThreeTerrainUpdateParams;
   noise?: NoiseFunction2D[];
   LOD?: number;
 }
@@ -32,16 +33,25 @@ export default class LandChunk extends THREE.Mesh {
   density: number = isMobile ? 2 : 1;
   position = new THREE.Vector3(0, 0, 0) as THREE.Object3D["position"];
 
-  params: Required<ThreeTerrainUpdateParams> = {
-    amplitude: 1,
-    frequency: {
-      x: 0,
-      z: 0,
-    },
-    lacunarity: 0.5,
-    persistance: 0.5,
-    octaves: 5,
-  };
+
+  constructor(args: LandChunkArgs) {
+    const {
+      chunkSize = 200,
+      position = new THREE.Vector3(0, 0, 0),
+      LOD = 2,
+    } = args;
+
+    const material = new THREE.MeshNormalMaterial({ wireframe: true });
+    const geometry = new THREE.PlaneGeometry(0, 0, 1, 1);
+
+    super(geometry, material);
+    (<any>this.material).dispose();
+    this.position.copy(position);
+    this.chunkSize = chunkSize;
+    this.LOD = LOD;
+    this.updateGeometry();
+    this.updateTopography();
+  }
 
   get subdivisions() {
     const subdivisiones = Math.round(
@@ -64,31 +74,6 @@ export default class LandChunk extends THREE.Mesh {
     return heightAttr;
   }
 
-  constructor(args: LandChunkArgs) {
-    const {
-      chunkSize = 200,
-      position = new THREE.Vector3(0, 0, 0),
-      params = {},
-      noise = [],
-      LOD = 2,
-    } = args;
-
-    const material = new THREE.MeshNormalMaterial({ wireframe: true });
-    const geometry = new THREE.PlaneGeometry(0, 0, 1, 1);
-
-    super(geometry, material);
-    (<any>this.material).dispose();
-    this.position.copy(position);
-    this.chunkSize = chunkSize;
-    this.noise = noise;
-    this.LOD = LOD;
-    this.updateParams(params);
-    this.updateGeometry();
-    this.updateTopography();
-  }
-  public updateParams(params: ThreeTerrainUpdateParams | {}) {
-    this.params = { ...this.params, ...params };
-  }
   public updateGeometry() {
     this.geometry.dispose();
 
@@ -103,38 +88,41 @@ export default class LandChunk extends THREE.Mesh {
   }
 
   public updateTopography() {
+    const {configParams, noise} = configParamsHook
+
+
+    this._terrain(configParams['base'],noise);
+    // this._terrain(configParams['hills'],noise);
+
+    this.reliefMap.needsUpdate = true;
+    this.geometry.computeVertexNormals();
+  }
+
+  private _terrain(args:noiseParams, noise:NoiseFunction2D[]){
     const {
       amplitude,
       frequency,
       lacunarity = 1,
       persistance = 1,
       octaves = 1,
-    } = this.params;
-
-    const { x: fx, z: fz } = frequency;
+      level,
+    } = args
     const posAttr = this.reliefMap;
     const heightAttr = this.height;
-
-
     for (let i = 0; i < posAttr.count; i++) {
       const x = posAttr.getX(i) + this.position.x;
       const z = posAttr.getZ(i) + this.position.z;
-      if (this.LOD === 0) {
-        console.log(`x:${x},z:${z}`);
-      }
-
       let y = 0;
       for (let octave = 0; octave < octaves; octave++) {
-        const _amplitud = amplitude * persistance ** octave;
-        const _frequency = lacunarity ** octave;
-        const argX = x * fx * 0.01 * _frequency;
-        const argZ = z * fz * 0.01 * _frequency;
-        y += this.noise[octave](argX, argZ) * _amplitud;
+        const _amplitud = amplitude * persistance ** (octave+ 1);
+        const _freq = lacunarity ** (octave + 1);
+        const argX = x * frequency * 0.01 * _freq + octave;
+        const argZ = z * frequency * 0.01 * _freq + octave;
+        y += noise[octave](argX, argZ) * _amplitud;
       }
-      heightAttr.setX(i, y);
-      posAttr.setY(i, y); //Math.max(y, -2));
+      const _y = Math.max(y, level);
+      heightAttr.setX(i, _y);
+      posAttr.setY(i, _y); 
     }
-    posAttr.needsUpdate = true;
-    this.geometry.computeVertexNormals();
   }
 }

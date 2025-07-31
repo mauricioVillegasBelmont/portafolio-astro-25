@@ -2,12 +2,12 @@ import WebGL from "three/addons/capabilities/WebGL.js";
 import * as THREE from "three";
 
 
-import {type AnimateCustomEvent}from 'libs/three_env/core/Interfaces'
+import {type AnimateCustomEvent}from 'libs/three_env/core/ControlManager'
 
 import { MyTreeApp } from "libs/three_env/core/MyTreeApp";
 import type EventEmitter from "libs/three_env/core/EventEmiter";
 import { threeAppHook } from "libs/three_env/core/Hooks/ThreeAppHook";
-import FieldManager from "libs/three_env/entities/Field/FieldManager";
+import TerrainGenerator from "libs/three_env/entities/Field/TerrainGenerator";
 import {addFieldNoiseGUI} from "libs/three_env/entities/Tools/AddFieldNoiseGUI"
 import { addAxisHelper } from "libs/three_env/entities/Tools/AddAxisHelper";
 
@@ -21,18 +21,23 @@ if(WebGL.isWebGL2Available()) {
 }
 
 function init(){
-  const { renderer, scene, eventEmiter, clock, camera, control } = threeAppHook()
+  const { renderer, scene, eventEmiter, clock, camera, control } = threeAppHook
 
-  camera.position.set(-0, 15, 20)
+  camera.position.set(-0, 15, 100)
   document.getElementById("three")?.appendChild(renderer.domElement);
   
-  const {
-    chunkManager,
-  } = FieldManager(scene,camera, control)
+  
+  const chunkManager = new TerrainGenerator();
+  control.addEventListener("change", () => {
+    chunkManager.generate();
+  });
+  
   navigationEvets(clock,eventEmiter);
   
+
+
   addFieldNoiseGUI(chunkManager)
-  addAxisHelper(scene,camera,)
+  addAxisHelper()
 }
 
 function navigationEvets(clock: THREE.Clock,eventEmiter: EventEmitter) {

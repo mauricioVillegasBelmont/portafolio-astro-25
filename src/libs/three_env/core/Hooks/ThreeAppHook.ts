@@ -1,6 +1,6 @@
 import { MyTreeApp } from "libs/three_env/core/MyTreeApp";
 
-export function threeAppHook(){
+function threeAppInit(){
   const app = new MyTreeApp();
   const { 
     renderer,
@@ -10,7 +10,8 @@ export function threeAppHook(){
     camera,
     control 
   } = app
-  return{ renderer,
+  return{ 
+    renderer,
     scene,
     eventEmiter,
     clock,
@@ -18,3 +19,5 @@ export function threeAppHook(){
     control 
   }
 }
+
+export const threeAppHook = threeAppInit()

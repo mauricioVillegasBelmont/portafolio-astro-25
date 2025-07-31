@@ -9,10 +9,7 @@ export class WaveFunctionCollapse {
   gridFactory = new GridFactory(this.WIDTH, this.HEIGHT);
   private pendingCoordinates: Set<string> = new Set();
 
-  constructor() {
-    // Opcional: añadir coordenada inicial si es necesario
-    // this.addCoordinate(0, 0);
-  }
+  constructor() {}
 
   private key(x: number, y: number): string {
     return `${x},${y}`;

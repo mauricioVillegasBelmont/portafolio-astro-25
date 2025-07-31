@@ -1,69 +1,67 @@
 import * as THREE from "three";
-import { createNoise2D, type NoiseFunction2D } from "simplex-noise";
-import alea from 'alea';
+
 import { configParamsHook } from "libs/three_env/entities/Field/hooks/configParamsHook";
 import { threeAppHook } from "libs/three_env/core/Hooks/ThreeAppHook";
+
 
 import LandChunk, {
   type ThreeTerrainUpdateParams,
 } from "libs/three_env/entities/Field/chunks/LandChunk";
-// import LandTreeGenerator from "libs/three_env/entities/Landtree/Landtree";
-
-
 import TopographyTileChunk from "./chunks/TopographyTileChunk";
 
 type ChunkManagerArgs = {
   scene?: THREE.Scene;
   position?: THREE.Object3D["position"];
-  // params?: ThreeTerrainUpdateParams;
+  params?: ThreeTerrainUpdateParams;
 };
-// type FieldChunk = { [key: string]: LandChunk };
+interface TerrainGeneratorConfig{
+  chunkSize?:number;
+  range?:number;
+  type?:'default'|'topography'
+  lod?:{[key:number]:number}
+}
 
-const {fieldConfigNoiseParams} = configParamsHook()
-const { scene, camera,  } = threeAppHook();
+
+const { scene, camera,  } = threeAppHook;
 
 export default class TerrainGenerator {
-  noise: NoiseFunction2D[] = [];
-  chunkSize = 100;
+
   fieldChunks = new Map<string, THREE.LOD<THREE.Object3DEventMap>>();
-  range = 0;
-  LODManage = {
-    1: 0,
-    // 2: 500,
-    // 3: 900,
-    // 4: 1000,
-  };
-  // trees = LandTreeGenerator();
 
-  // params: ThreeTerrainUpdateParams = {
-  //   amplitude: 3,
-  //   frequency: { x: 2, z: 2 },
-  //   lacunarity: 1,
-  //   persistance: 1,
-  //   octaves: 1,
-  // };
+  chunkSize:number;
+  range:number;
 
-  constructor() {
-    for (let i = 0; i < 5; i++) {
-      this.noise[i] = createNoise2D(alea('seed'));
+  chcunkFactory;
+  LODConfig:{[key:number]:number}
+  
+  constructor(config:TerrainGeneratorConfig={}) {
+    
+    this.chunkSize = config.chunkSize|| 100;
+    this.range = config.range|| 3;
+    const type = config.type||'default'
+    this.LODConfig = config.lod||{
+      1: 0,
+    }
+    switch (type) {
+      case 'topography':
+        this.chcunkFactory = TopographyTileChunk;
+        break
+      case 'default':
+      default:
+        this.chcunkFactory = LandChunk;
+        break
     }
   }
 
   createChunk(position: THREE.Vector3) {
     const LOD = new THREE.LOD();
-    
-
-    for (const [key, value] of Object.entries(this.LODManage)) {
+    for (const [key, value] of Object.entries(this.LODConfig)) {
       const args = {
         position: position,
         chunkSize: this.chunkSize,
-        params: fieldConfigNoiseParams,
-        noise: this.noise,
         LOD: Number(key),
-        direction: Math.sign(-1) as 1 | -1,
       };
-      // const chunk = new LandChunk(args);
-      const chunk = new TopographyTileChunk(args);
+      const chunk = new this.chcunkFactory(args);
       const ChunkObject = new THREE.Object3D();
       ChunkObject.children.push(chunk);
       // if (Number(key) < 4) {
@@ -79,7 +77,6 @@ export default class TerrainGenerator {
 
   // private updatePosition(camera: THREE.Camera, scene: THREE.Scene) {
   generate() {
-    // const { position, scene } = args;
     const { x, z } = camera.position;
     const cx = Math.floor(x / this.chunkSize);
     const cz = Math.floor(z / this.chunkSize);
@@ -118,7 +115,7 @@ export default class TerrainGenerator {
       }
     }
   }
-  updateParams() {
+  update() {
     const chunks = [...this.fieldChunks.values()];
     for (const chunk of chunks) {
       scene.remove(chunk);
