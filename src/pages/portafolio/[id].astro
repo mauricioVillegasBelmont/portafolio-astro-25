@@ -15,37 +15,25 @@ type schema = {
 	props: { [key: string]: any };
 };
 export function getStaticPaths(): schema[] {
-	const activePaths = Portafolio.filter((element) => element.active > 0);
-	const paths = activePaths.map<schema>((element: PortafolioSchema) => {
-		const { id, ...props } = element;
-		return {
-			params: { id: id },
-			props: {
-				...props,
-			},
-		};
-	});
-	return paths;
+	return Portafolio.filter((element) => element.active > 0).map<schema>(
+		(element, index) => {
+			const { id, ...props } = element;
+			return {
+				params: { id: id },
+				props: {
+					...props,
+				},
+			};
+		}
+	);
 }
 const { id } = Astro.params;
-const { name, source, device, view_url, paths = {} } = Astro.props;
-
-export const prerender = false;
-
-const path_keys = Object.keys(paths).map<string>((item) => {
-	return item;
-});
-const search_therm = Astro.url.searchParams.get("search") || "";
-const view = path_keys.includes(search_therm) ? paths[search_therm] : view_url;
+const { name, source, device, view_url } = Astro.props;
 ---
 
 <PortafolioTemplate title={`${name} - Portafolio`}>
 	<Header slot="header" />
-	<PortfoliDescription
-		slot="header"
-		parent_url={Astro.url.pathname}
-		{...Astro.props}
-	/>
+	<PortfoliDescription slot="header" {...Astro.props} />
 	{
 		() => {
 			switch (source) {
@@ -60,7 +48,7 @@ const view = path_keys.includes(search_therm) ? paths[search_therm] : view_url;
 					break;
 				case "online":
 				case "remote":
-					return <Iframe url={view} slot="iframe" />;
+					return <Iframe url={view_url} slot="iframe" />;
 					break;
 				default:
 					return <p>No local preview has been implemented yet.</p>;

@@ -24,14 +24,7 @@ const youtube: PortafolioSchema[] = Portafolio.filter(
 	(item) => item.category == "youtube" && item.active > 0
 );
 
-function keyToName(key: string) {
-	return key
-		.replace("-", " ")
-		.replace(
-			/\w\S*/g,
-			(text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
-		);
-}
+import { StringUtils } from "utils/stringUtils";
 ---
 
 <section class="absolute top-0 left-0 max-h-lvh">
@@ -66,11 +59,7 @@ function keyToName(key: string) {
 									{Object.entries(post.paths).map((k: string[]) => {
 										return (
 											<li class="before:pr-2 underline">
-												<Link
-													href={`/portafolio/${post.id}?search=${k[0]}`}
-													text={keyToName(k[0])}
-													classes="hover:underline"
-												/>
+												{StringUtils.keyToName(k[0])}
 											</li>
 										);
 									})}
@@ -105,11 +94,7 @@ function keyToName(key: string) {
 									{Object.entries(post.paths).map((k: string[]) => {
 										return (
 											<li class="before:pr-2 underline">
-												<Link
-													href={`/portafolio/${post.id}?search=${k[0]}`}
-													text={keyToName(k[0])}
-													classes="hover:underline"
-												/>
+												{StringUtils.keyToName(k[0])}
 											</li>
 										);
 									})}

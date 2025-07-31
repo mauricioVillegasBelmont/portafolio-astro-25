@@ -39,4 +39,14 @@ export class StringUtils {
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+  
+  static keyToName(key: string) {
+    return key
+      .replace("-", " ")
+      .replace(
+        /\w\S*/g,
+        (text) => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+      );
+  }
+
 }
