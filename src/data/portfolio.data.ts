@@ -1,442 +1,510 @@
-export interface PortafolioSchema{
-  id:string;
-  source: "local"|"remote"|"online"|"youtube";
-  category:"page"|"cms"|"youtube";
-  device:"responsive"|"desktop"|"mobil"|"youtube";
-  name:string;
-  customer:string;
-  view_url:string;
-  paths?:{[key:string]:string}
-  online_url?:string;
-  features: string[];
-  description: null | string;
-  active: number;
+export interface PortafolioSchema {
+	id: string;
+	source: "local" | "remote" | "online" | "youtube";
+	category: "page" | "cms" | "youtube";
+	device: "responsive" | "desktop" | "mobil" | "youtube";
+	name: string;
+	customer: string;
+	view_url: string;
+	paths?: { [key: string]: string };
+	online_url?: string;
+	features: string[];
+	description: null | string;
+	active: number;
 }
 
-export const Portafolio:PortafolioSchema[] = [
-  {
-    "id": "4SBjpZgHN80",
-    "source":"youtube",
-    "category": "youtube",
-    "name": "Promocional App",
-    "customer": "Santillana Compartir",
-    "device": "youtube",
-    "view_url": "https://www.youtube.com/watch?v=4SBjpZgHN80",
-    "features": [],
-    "description": null,
-    "active": 1
-  },
-  {
-    "id": "-8Jl29pw4xo",
-    "source":"youtube",
-    "category": "youtube",
-    "name": "Feliz año nuevo",
-    "customer": "Santillana Compartir",
-    "device": "youtube",
-    "view_url": "https://www.youtube.com/watch?v=-8Jl29pw4xo",
-    "features": [],
-    "description": null,
-    "active": 1
-  },
-  {
-    "id": "W_OVd2L-QXw",
-    "source":"youtube",
-    "category": "youtube",
-    "name": "Felíz día del niño",
-    "customer": "Santillana Compartir",
-    "device": "youtube",
-    "view_url": "https://www.youtube.com/watch?v=W_OVd2L-QXw",
-    "features": [],
-    "description": null,
-    "active": 1
-  },
-  {
-    "id": "yQVVYWE4YdE",
-    "source":"youtube",
-    "category": "youtube",
-    "name": "Tutorial de pagos",
-    "customer": "Santillana Compartir",
-    "device": "youtube",
-    "view_url": "https://www.youtube.com/watch?v=yQVVYWE4YdE",
-    "features": [],
-    "description": null,
-    "active": 1
-  },
-  {
-    "id": "cconqsta",
-    "source":"remote",
-    "category": "page",
-    "name": "Convención Conquista",
-    "customer": "Santillana Compartir",
-    "device": "desktop",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-cconqsta/",
-    "features": ["Mailing distributión"],
-    "description": "<p><strong>cconqsta</strong> es un micrositio distribuido para el evento <strong class=\"fs--italic\">\"Convención Transformación, Innovación y Conquista\"</strong> de <strong>Santillana Compartir,</strong> celebrado en <strong>Juriquilla, Querétaro, en 2018.</strong> Este micrositio fue diseñado con el propósito de proporcionar información detallada sobre los eventos en los que el personal de ventas participaría durante la convención, sirviendo también como un recuerdo digital para todos los participantes.</p>\n  <p>El micrositio se distribuyó exclusivamente a través de <strong>correo electrónico</strong> entre el personal que asistiría al evento, convirtiéndose así en una herramienta de comunicación interna. Dado su carácter interno, no fue necesario optimizarlo para motores de búsqueda (SEO). Aunque puede que este proyecto no cumpla con los estándares de un sitio web público, representa un valor especial para mí, ya que me permitió explorar y experimentar con interacciones de usuario poco convencionales. En muchos aspectos, se asemeja más a la creación de <strong>trípticos digitales</strong> que a la elaboración de un sitio web tradicional.</p>",
-    "active": 1
-  },
-  {
-    "id": "snme01",
-    "source":"remote",
-    "category": "page",
-    "name": "Landing NME17 Review",
-    "customer": "Santillana Compartir",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-snme01/",
-    "features": ["Mailing distributión"],
-    "description": "<p>Durante los años <strong>2017</strong> y <strong>2018,</strong> el Gobierno Federal impulsó una <strong>nueva reforma al modelo educativo,</strong> lo cual dio lugar a la realización de Simposios de dos días divididos en tres sesiones. En este contexto, <strong>Santillana Compartir</strong> participó activamente enviando presentaciones digitales a través de <strong>correo electrónico</strong> a <strong>profesores de diversas escuelas.</strong> Estas presentaciones tenían como objetivo promover la <strong>agenda del evento,</strong> proporcionando información detallada sobre las fechas, horarios y ponentes relevantes.</p>\n  <p>Posteriormente al evento, estas mismas presentaciones se utilizaron para mostrar videos de las diversas ponencias, brindando así un recurso multimedia completo y accesible para los participantes.</p>",
-    "active": 1
-  },
-  {
-    "id": "tdcgree",
-    "source":"remote",
-    "category": "page",
-    "name": "Chrismas greetings",
-    "customer": "Santillana Compartir",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/santillanaWorkbook/tdcgree/",
-    "features": ["Mailing distributión"],
-    "description": "<p>Para celebrar las fiestas decembrinas del año 2017, <strong>Santillana Compartir</strong> optó por enviar cartas interactivas de felicitación a los profesores de sus diversas escuelas y al equipo interno. Esta iniciativa buscaba no solo expresar buenos deseos para la temporada festiva, sino también promover la interacción y el espíritu de comunidad entre los destinatarios.</p>",
-    "active": 1
-  },
-  {
-    "id": "pdqesc",
-    "source":"remote",
-    "category": "page",
-    "name": "Presentación: solución educativa",
-    "customer": "Santillana Compartir",
-    "device": "desktop",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-pdqesc/",
-    "features": ["Mailing distributión"],
-    "description": "<p>Se diseñó una <strong>presentación digital</strong> para mostrar a nuevos clientes, así como a aquellos ya fidelizados, los cambios y mejoras que experimentarían los paquetes educativos para las escuelas. Esta presentación se proyectaría en la pizarra, aprovechando la funcionalidad de controles de <strong>teclado</strong> y <strong>clicker</strong> para permitir una interacción fluida durante la exposición.</p>",
-    "active": 1
-  },
-  {
-    "id": "chinampayolo_layout",
-    "source":"remote",
-    "category": "page",
-    "name": "Chinampayolo",
-    "customer": "Chinampayolo.coop",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/chinampayolo-layout/",
-    "features": ["Landing"],
-    "description": "demo text",
-    "active": 0
-  },
-  {
-    "id": "cin124",
-    "source":"remote",
-    "category": "page",
-    "name": "Cinepolis | Wish: El Poder de los Deseos",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/",
-    paths:{
-      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/registro/",
-    },
-    "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>Mi experiencia laboral con Idea ha sido sumamente enriquecedora. Trabajar con esta plataforma me ha brindado la oportunidad de crecer tanto en el diseño del layout como en la programación, además de permitirme desarrollar habilidades en trabajo en equipo al colaborar con otros desarrolladores.</p>\n  <p>La mayoría de los micrositios en los que he participado se caracterizan por incluir un modelo de <strong>concurso de juegos,</strong> donde el objetivo principal es <strong>obtener un puntaje alto</strong> para ser seleccionado.</p>\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 1
-  },
-  {
-    "id": "prom990",
-    "source":"remote",
-    "category": "page",
-    "name": "prom990",
-    "customer": "losdeidea.com.mx",
-    "device": "mobil",
-    "view_url": "https://prom990.d-link.mx/",
-    "features": ["Promo","Marketing game contest","QR session","Admin panel"],
-    "description": "<p>Una característica importante de estos sitios es su modalidad de acceso especial a través de sesiones que se abren escaneando un <strong>código QR</strong> y luego realizando el inicio de sesión como usuario. Esta funcionalidad única permite a los usuarios <strong>modificar el skin</strong> y acceder a <strong>diferentes juegos</strong> al escanear los códigos, los cuales pueden encontrarse en varios productos de Danonino. Dado que esta dinámica está diseñada para ser utilizada con la <strong>cámara de un celular,</strong> el sitio ha sido optimizado para funcionar e<strong>xclusivamente en dispositivos móviles.</strong> Además, al participar en los juegos, los usuarios tienen la oportunidad de ganar premios que la compañía ofrece.</p>\n\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 0
-  },
-  {
-    "id": "prom943",
-    "source":"remote",
-    "category": "page",
-    "name": "Cinepolis | Avatar: El Camino del Agua",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/",
-    paths:{
-      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/registro/",
-    },
-    "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>Este micrositio fue parte de una promoción para la cual la propuesta original contemplaba que las <strong>luciérnagas</strong> permanecieran <strong>estáticas</strong> dentro de las imágenes de fondo. Esta idea, aunque inicialmente solo una sugerencia, resultó ser un elemento clave para cautivar aún más al cliente con el diseño, proporcionando un efecto visual muy agradable.</p>\n<p>Es importante destacar que, si bien la librería <strong>particles.js</strong> es bastante conocida, su popularidad se encuentra principalmente entre desarrolladores frontend en lugar de diseñadores gráficos. Por lo tanto, tanto para los diseñadores como para el cliente, fue una grata sorpresa descubrir el potencial de esta herramienta.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 1
-  },
-  {
-    "id": "prom1005",
-    "source":"remote",
-    "category": "page",
-    "name": "JAC - PODER UNIFICADO",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1005-view/",
-    paths:{
-      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1015-view/registro/",
-    },
-    "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
-    "active": 1
-  },
-  {
-    "id": "prom991",
-    "source":"remote",
-    "category": "page",
-    "name": "prom991",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://prom991.d-link.mx/",
-    "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>El diseño y layout de este proyecto representó un cambio significativo para los micrositios posteriores, ya que marcó el inicio de una <strong>colaboración más estrecha</strong> entre los equipos de <strong>programación y diseño.</strong> Nos organizamos para identificar puntos en común en los que ambas áreas pudieran retroalimentarse mutuamente, lo que resultó en un diseño más cohesivo y eficiente.</p>\n  <ul class=\"bulletted__detailed_list bullet pl--6 mb--5\">\n    <li>flujo del layout.</li>\n    <li>máximo de contenedores, y qué pasa si la pantalla es mayor</li>\n    <li>composiciones tipográficas lo que sí y lo que no a través del diseño responsivo</li>\n    <li>decoraciones de fantasía a través del diseño responsivo</li>\n  </ul>\n  <p>Además, este proyecto estableció el estándar para el flujo de diseño en los micrositios y promociones subsiguientes, sirviendo como referencia para futuros proyectos.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 0
-  },
-  {
-    "id": "prom955",
-    "source":"remote",
-    "category": "page",
-    "name": "Entrenamiento Espacial",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view",
-    paths:{
-      "registro": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view/registro/",
-    },
-    "features": ["Promo","Marketing game contest","Admin panel"],
-    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
-    "active": 1
-  },
-  {
-    "id": "g73002",
-    "source":"remote",
-    "category": "page",
-    "name": "Platica Polinesia",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-g73002-view/",
-    "features": ["Landing","Admin panel","Fun activities"],
-    "description": "<p>Un micrositio con <strong>contenido interactivo</strong> de estos personajes.</p>\n<p>Votaciones, Give aways, Galeria entre otras caracteristicas especiales.</p>",
-    "active": 1
-  },
-  {
-    "id": "prom1009",
-    "source":"remote",
-    "category": "page",
-    "name": "Disney 100 / Album",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/",
-    paths:{
-      "album": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/album/",
-    },
-    "features": ["Promo","Marketing game contest","Trading cart","Admin panel"],
-    "description": "<p>Una de nuestras promociones más recientes involucró el desarrollo frontend de un <strong>carrito de compra,</strong> permitiendo a los usuarios realizar intercambios de elementos basados en dos tipos de valores: <strong>monedas</strong> obtenidas mediante la participación en <strong>minijuegos</strong> y poder <strong>comprar tarjetas</strong> dentro de un <strong>álbum.</strong> El puntaje obtenido determinaba la cantidad de monedas ganadas.</p>\n  otro\n  <p>A su vez,un segundo minijuego proporcionaba un cierto número de <strong>tarjetas al azar</strong> para ayudarte a completar el álbum, y la acumulación de tarjetas repetidas proporcionaba otra base para poder intercambiarlas por tarjetas que aún no han sido obtenidas</p>\n\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
-    "active": 1
-  },
-  {
-    "id": "prom1039",
-    "source":"remote",
-    "category": "page",
-    "name": "¡Regresa a clases con Stitch!",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1039-view/",
-    "features": ["Promo","Marketing game contest","Trading cart","Admin panel"],
-    "description": "<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
-    "active": 0
-  },
-  {
-    "id": "parentesis",
-    "source":"remote",
-    "category": "cms",
-    "name": "parentesis.com",
-    "customer": "Contacto Interactivo",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/",
-    online_url: "https://parentesis.com/",
-    paths:{
-      "quizz": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/quizz/",
-      "inline-query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/inline_query/",
-      "infographics":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/infographics/",
-    },
-    "features": [
-      'Custom CMS',
-      'notas interactivas',
-      'encuestas',
-      'Admin panel',
-    ],
-    "description": "<p>Uno de mis primeros proyectos importantes en equipo implicó el rediseño completo de un <strong>CMS/BLOG.</strong> Mi rol incluyó la creación de bocetos y mockups, así como la generación de la estructura del sitio utilizando <strong>HTML</strong> y <strong>CSS.</strong> Además, tuve la oportunidad de desarrollar infografías digitales para complementar el contenido del sitio.</p>\n  <p>Durante este proyecto, también implementamos <strong>plugins y modulos personalizados utilizando PHP.</strong> Uno de estos plugins fue un <strong>módulo de encuestas</strong> diseñado específicamente para realizar sondeos de mercadotecnia donde se usó de <strong>Pauta de Facebook, FacebookAds y pixel</strong> para llegar a <strong>segmentos de mercado específicos</strong> y obtener información valiosa.</p>\n  <p>Puedes encontrar un ejemplo de nuestra implementación en este enlace: <a href=\"https://parentesis.com/nota-interactiva/Dinos_que_domicilias_y_te_ayudamos_a_encontrar_los_mejores_beneficios__1_1\" target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">Dinos qué domicilias y te ayudamos a encontrar los mejores beneficios.</a> <small class=\"d--block fs--italic\">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, colaboré estrechamente con otros blogs asociados, como <a href=\"/portafolio/harmonia\" class=\"c__turquoise text--underline\">Harmonía.la</a> y <a href=\"https://pijamasurf.com/\" target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">PijamaSurf.com</a>.</p>",
-    "active": 1
-  },
-  {
-    "id": "parentesis-technical-test",
-    "source":"remote",
-    "category": "page",
-    "name": "TechnicalTest | parentesis.com",
-    "customer": "Contacto Interactivo",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-TechnicalTest-layout/",
-    "features": [
-      'Css Layout',
-    ],
-    "description": "<p>Uno de mis primeros proyectos importantes en equipo implicó el rediseño completo de un <strong>CMS/BLOG.</strong> Mi rol incluyó la creación de bocetos y mockups, así como la generación de la estructura del sitio utilizando <strong>HTML</strong> y <strong>CSS.</strong> Además, tuve la oportunidad de desarrollar infografías digitales para complementar el contenido del sitio.</p>\n  <p>Durante este proyecto, también implementamos <strong>plugins y modulos personalizados utilizando PHP.</strong> Uno de estos plugins fue un <strong>módulo de encuestas</strong> diseñado específicamente para realizar sondeos de mercadotecnia donde se usó de <strong>Pauta de Facebook, FacebookAds y pixel</strong> para llegar a <strong>segmentos de mercado específicos</strong> y obtener información valiosa.</p>\n  <p>Puedes encontrar un ejemplo de nuestra implementación en este enlace: <a href=\"https://parentesis.com/nota-interactiva/Dinos_que_domicilias_y_te_ayudamos_a_encontrar_los_mejores_beneficios__1_1\" target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">Dinos qué domicilias y te ayudamos a encontrar los mejores beneficios.</a> <small class=\"d--block fs--italic\">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, colaboré estrechamente con otros blogs asociados, como <a href=\"/portafolio/harmonia\" class=\"c__turquoise text--underline\">Harmonía.la</a> y <a href=\"https://pijamasurf.com/\" target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">PijamaSurf.com</a>.</p>",
-    "active": 1
-  },
-  {
-    "id": "harmonia",
-    "source":"remote",
-    "category": "cms",
-    "name": "harmonia.la",
-    "customer": "Contacto Interactivo",
-    "device": "responsive",
-    "view_url": "https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/",
-    online_url: "https://harmonia.la/",
-    paths:{
-      "inline-query":"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/inline_query/",
-    },
-    "features": [
-      'Custom CMS',
-      'notas interactivas',
-      'encuestas',
-      'Admin panel',
-    ],
-    "description": "<p>Otro de los grandes proyectos en los que participé, se centró en el sitio web <a href=\"/portafolio/harmonia\"  class=\"c__turquoise text--underline\">Harmonía.la</a> Además de contar con soporte para realizar encuestas de mercado mediante <strong>Pauta de Facebook, FacebookAds y pixel</strong> y mostrar infografías digitales e interactivas, similar a su contraparte Paréntesis.com.</p>\n  <p>Puedes ver un ejemplo de nuestras encuestas en el siguiente enlace: <a href=\"https://harmonia.la/nota-interactiva/aprende-a-cuidar-mejor-de-ti-y-de-tus-seres-queridos\"  target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">Aprende a cuidar mejor de ti y de tus seres queridos.</a> <small class=\"d--block fs--italic\">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, desarrollamos algunas <strong>herramientas/infografías</strong> interactivas para sondeos de mercado, como esta sobre la leche de vaca: <a href=\"https://harmonia.la/cuerpo/alimentacion/sabes-si-la-leche-de-vaca-que-consumes-es-la-mejor-averigualo-aqui\" target=\"_blank\" rel=\"noopener norefer\" class=\"c__turquoise text--underline\">¿Sabes si la leche de vaca que consumes es la mejor? Averígualo aquí.</a></p>",
-    "active": 1
-  },
-  {
-    "id": "shambalante",
-    "source":"remote",
-    "category": "cms",
-    "name": "shambalante.com",
-    "customer": "Contacto Interactivo / FRD",
-    "device": "responsive",
-    "view_url": "https://shambalante.com/",
-    "online_url": "https://shambalante.com/",
-    "features": ["Wordpres CMS", "Plugin Customization"],
-    "description": null,
-    "active": 1
-  },
-  {
-    "id": "funo1415",
-    "source":"remote",
-    "category": "cms",
-    "name": "funo1415",
-    "customer": "losdeidea.com.mx",
-    "device": "responsive",
-    "view_url": "https://funo1415.d-link.mx/",
-    "online_url": "https://funo.mx/",
-    "features": ["custom CMS","Pseudostatic content","Admin panel"],
-    "description": "<p><strong>Funo</strong> fue un proyecto interesante en el que tuve la oportunidad de participar, ya que implicó la integración de diversos recursos por página y su contenido se considera pseudoestático. Esto significa que algunos elementos son modificables mientras que otros permanecen estáticos, con un enfoque principal en la gestión de propiedades, documentos de reportes e integración con <strong>APIs para inversionistas.</strong></p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como del sitio.</p>",
-    "active": 1
-  },
-  {
-    "id": "vlyt",
-    "source":"remote",
-    "category": "cms",
-    "name": "vlyt.mx",
-    "customer": "vlyt.mx",
-    "device": "responsive",
-    "view_url": "https://vlyt.mx/",
-    "online_url": "https://vlyt.mx/",
-    "features": ["Wordpres CMS"],
-    "description": "<p><strong>Vlyt</strong> es un sitio web en <strong>WordPress</strong> que llegó a nosotros a través de un conocido. Realizamos el rediseño del sitio en varias fases o sprints, y hemos ido adaptándolo utilizando un framework llamado <strong>Gantry</strong>, que personalmente considero uno de mis favoritos debido a su gran flexibilidad.</p>\n <p>Es importante mencionar que el cliente quedó <strong>encantado</strong> con nuestro servicio.</p>",
-    "active": 1
-  },
-  {
-    id:"prom1024",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Kia | Insideout - ¡UN VIAJE EMOCIONANTE!",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1024-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes que realizan pruebas de manejo en <strong>distribuidoras autorizadas.</strong></p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia.</p>',
-    active: 1,
-  },
-  {
-    id:"prom1022",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Deadpool&wolveine | Heinz - HEINZ BROMANCE",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1022-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"nb2b025",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"NESPRESSO | PREPARAR TU CAFÉ",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-nb2b025-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>una micro pagina para tutorial de uso de maquinas de café</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"prom1027",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Stitch | Member's Mark - Aventura Member's Mark",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1027-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"prom1036",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Heinz | ESPN - ¡Conviértete en el MVP Heinz!",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1036-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"ptd079",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Stitch | Laboratorio de Juegos",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-ptd079-view/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"pyme-scrollytelling",
-    source: "remote",
-    category:"page",
-    device:"responsive",
-    name:"Hisense | NBA - scrollytelling - ¡JUGADA HISENSE!",
-    customer:"losdeidea.com.mx",
-    view_url:"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-scrollytelling/",
-    features: ['Game Contest Challenge', "Trivia"],
-    description: '<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>',
-    active: 1,
-  },
-  {
-    id:"xantia",
-    source: "online",
-    category:"cms",
-    device:"responsive",
-    name:"info.xantia.mx",
-    customer:"losdeidea.com.mx",
-    view_url:"https://info.xantia.mx/",
-    features: ['Hubspot', "Wordpress"],
-    description: '<p>Sitio promocional en <strong>WordPress,</strong> Landing Page para registro de clientes mediante el <strong>CRM HubSpot.</strong></p>',
-    active: 1,
-  },
-  
-]
+export const Portafolio: PortafolioSchema[] = [
+	{
+		id: "4SBjpZgHN80",
+		source: "youtube",
+		category: "youtube",
+		name: "Promocional App",
+		customer: "Santillana Compartir",
+		device: "youtube",
+		view_url: "https://www.youtube.com/watch?v=4SBjpZgHN80",
+		features: [],
+		description: null,
+		active: 1,
+	},
+	{
+		id: "-8Jl29pw4xo",
+		source: "youtube",
+		category: "youtube",
+		name: "Feliz año nuevo",
+		customer: "Santillana Compartir",
+		device: "youtube",
+		view_url: "https://www.youtube.com/watch?v=-8Jl29pw4xo",
+		features: [],
+		description: null,
+		active: 1,
+	},
+	{
+		id: "W_OVd2L-QXw",
+		source: "youtube",
+		category: "youtube",
+		name: "Felíz día del niño",
+		customer: "Santillana Compartir",
+		device: "youtube",
+		view_url: "https://www.youtube.com/watch?v=W_OVd2L-QXw",
+		features: [],
+		description: null,
+		active: 1,
+	},
+	{
+		id: "yQVVYWE4YdE",
+		source: "youtube",
+		category: "youtube",
+		name: "Tutorial de pagos",
+		customer: "Santillana Compartir",
+		device: "youtube",
+		view_url: "https://www.youtube.com/watch?v=yQVVYWE4YdE",
+		features: [],
+		description: null,
+		active: 1,
+	},
+	{
+		id: "cconqsta",
+		source: "remote",
+		category: "page",
+		name: "Convención Conquista",
+		customer: "Santillana Compartir",
+		device: "desktop",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-cconqsta/",
+		features: ["Mailing distributión"],
+		description:
+			'<p><strong>cconqsta</strong> es un micrositio distribuido para el evento <strong class="fs--italic">"Convención Transformación, Innovación y Conquista"</strong> de <strong>Santillana Compartir,</strong> celebrado en <strong>Juriquilla, Querétaro, en 2018.</strong> Este micrositio fue diseñado con el propósito de proporcionar información detallada sobre los eventos en los que el personal de ventas participaría durante la convención, sirviendo también como un recuerdo digital para todos los participantes.</p>\n  <p>El micrositio se distribuyó exclusivamente a través de <strong>correo electrónico</strong> entre el personal que asistiría al evento, convirtiéndose así en una herramienta de comunicación interna. Dado su carácter interno, no fue necesario optimizarlo para motores de búsqueda (SEO). Aunque puede que este proyecto no cumpla con los estándares de un sitio web público, representa un valor especial para mí, ya que me permitió explorar y experimentar con interacciones de usuario poco convencionales. En muchos aspectos, se asemeja más a la creación de <strong>trípticos digitales</strong> que a la elaboración de un sitio web tradicional.</p>',
+		active: 1,
+	},
+	{
+		id: "snme01",
+		source: "remote",
+		category: "page",
+		name: "Landing NME17 Review",
+		customer: "Santillana Compartir",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-snme01/",
+		features: ["Mailing distributión"],
+		description:
+			"<p>Durante los años <strong>2017</strong> y <strong>2018,</strong> el Gobierno Federal impulsó una <strong>nueva reforma al modelo educativo,</strong> lo cual dio lugar a la realización de Simposios de dos días divididos en tres sesiones. En este contexto, <strong>Santillana Compartir</strong> participó activamente enviando presentaciones digitales a través de <strong>correo electrónico</strong> a <strong>profesores de diversas escuelas.</strong> Estas presentaciones tenían como objetivo promover la <strong>agenda del evento,</strong> proporcionando información detallada sobre las fechas, horarios y ponentes relevantes.</p>\n  <p>Posteriormente al evento, estas mismas presentaciones se utilizaron para mostrar videos de las diversas ponencias, brindando así un recurso multimedia completo y accesible para los participantes.</p>",
+		active: 1,
+	},
+	{
+		id: "tdcgree",
+		source: "remote",
+		category: "page",
+		name: "Chrismas greetings",
+		customer: "Santillana Compartir",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/santillanaWorkbook/tdcgree/",
+		features: ["Mailing distributión"],
+		description:
+			"<p>Para celebrar las fiestas decembrinas del año 2017, <strong>Santillana Compartir</strong> optó por enviar cartas interactivas de felicitación a los profesores de sus diversas escuelas y al equipo interno. Esta iniciativa buscaba no solo expresar buenos deseos para la temporada festiva, sino también promover la interacción y el espíritu de comunidad entre los destinatarios.</p>",
+		active: 1,
+	},
+	{
+		id: "pdqesc",
+		source: "remote",
+		category: "page",
+		name: "Presentación: solución educativa",
+		customer: "Santillana Compartir",
+		device: "desktop",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/santillana-pdqesc/",
+		features: ["Mailing distributión"],
+		description:
+			"<p>Se diseñó una <strong>presentación digital</strong> para mostrar a nuevos clientes, así como a aquellos ya fidelizados, los cambios y mejoras que experimentarían los paquetes educativos para las escuelas. Esta presentación se proyectaría en la pizarra, aprovechando la funcionalidad de controles de <strong>teclado</strong> y <strong>clicker</strong> para permitir una interacción fluida durante la exposición.</p>",
+		active: 1,
+	},
+	{
+		id: "chinampayolo_layout",
+		source: "remote",
+		category: "page",
+		name: "Chinampayolo",
+		customer: "Chinampayolo.coop",
+		device: "responsive",
+		view_url: "https://mauriciovillegasbelmont.github.io/chinampayolo-layout/",
+		features: ["Landing"],
+		description: "demo text",
+		active: 0,
+	},
+	{
+		id: "cin124",
+		source: "remote",
+		category: "page",
+		name: "Cinepolis | Wish: El Poder de los Deseos",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/",
+		paths: {
+			registro:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-cin124/registro/",
+		},
+		features: ["Promo", "Marketing game contest", "Admin panel"],
+		description:
+			"<p>Mi experiencia laboral con Idea ha sido sumamente enriquecedora. Trabajar con esta plataforma me ha brindado la oportunidad de crecer tanto en el diseño del layout como en la programación, además de permitirme desarrollar habilidades en trabajo en equipo al colaborar con otros desarrolladores.</p>\n  <p>La mayoría de los micrositios en los que he participado se caracterizan por incluir un modelo de <strong>concurso de juegos,</strong> donde el objetivo principal es <strong>obtener un puntaje alto</strong> para ser seleccionado.</p>\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+		active: 1,
+	},
+	{
+		id: "prom990",
+		source: "remote",
+		category: "page",
+		name: "prom990",
+		customer: "losdeidea.com.mx",
+		device: "mobil",
+		view_url: "https://prom990.d-link.mx/",
+		features: ["Promo", "Marketing game contest", "QR session", "Admin panel"],
+		description:
+			"<p>Una característica importante de estos sitios es su modalidad de acceso especial a través de sesiones que se abren escaneando un <strong>código QR</strong> y luego realizando el inicio de sesión como usuario. Esta funcionalidad única permite a los usuarios <strong>modificar el skin</strong> y acceder a <strong>diferentes juegos</strong> al escanear los códigos, los cuales pueden encontrarse en varios productos de Danonino. Dado que esta dinámica está diseñada para ser utilizada con la <strong>cámara de un celular,</strong> el sitio ha sido optimizado para funcionar e<strong>xclusivamente en dispositivos móviles.</strong> Además, al participar en los juegos, los usuarios tienen la oportunidad de ganar premios que la compañía ofrece.</p>\n\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+		active: 0,
+	},
+	{
+		id: "prom943",
+		source: "remote",
+		category: "page",
+		name: "Cinepolis | Avatar: El Camino del Agua",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/",
+		paths: {
+			registro:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom943-view/registro/",
+		},
+		features: ["Promo", "Marketing game contest", "Admin panel"],
+		description:
+			"<p>Este micrositio fue parte de una promoción para la cual la propuesta original contemplaba que las <strong>luciérnagas</strong> permanecieran <strong>estáticas</strong> dentro de las imágenes de fondo. Esta idea, aunque inicialmente solo una sugerencia, resultó ser un elemento clave para cautivar aún más al cliente con el diseño, proporcionando un efecto visual muy agradable.</p>\n<p>Es importante destacar que, si bien la librería <strong>particles.js</strong> es bastante conocida, su popularidad se encuentra principalmente entre desarrolladores frontend en lugar de diseñadores gráficos. Por lo tanto, tanto para los diseñadores como para el cliente, fue una grata sorpresa descubrir el potencial de esta herramienta.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1005",
+		source: "remote",
+		category: "page",
+		name: "JAC - PODER UNIFICADO",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1005-view/",
+		paths: {
+			registro:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1015-view/registro/",
+		},
+		features: ["Promo", "Marketing game contest", "Admin panel"],
+		description:
+			"<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
+		active: 1,
+	},
+	{
+		id: "prom991",
+		source: "remote",
+		category: "page",
+		name: "prom991",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url: "https://prom991.d-link.mx/",
+		features: ["Promo", "Marketing game contest", "Admin panel"],
+		description:
+			'<p>El diseño y layout de este proyecto representó un cambio significativo para los micrositios posteriores, ya que marcó el inicio de una <strong>colaboración más estrecha</strong> entre los equipos de <strong>programación y diseño.</strong> Nos organizamos para identificar puntos en común en los que ambas áreas pudieran retroalimentarse mutuamente, lo que resultó en un diseño más cohesivo y eficiente.</p>\n  <ul class="bulletted__detailed_list bullet pl--6 mb--5">\n    <li>flujo del layout.</li>\n    <li>máximo de contenedores, y qué pasa si la pantalla es mayor</li>\n    <li>composiciones tipográficas lo que sí y lo que no a través del diseño responsivo</li>\n    <li>decoraciones de fantasía a través del diseño responsivo</li>\n  </ul>\n  <p>Además, este proyecto estableció el estándar para el flujo de diseño en los micrositios y promociones subsiguientes, sirviendo como referencia para futuros proyectos.</p>\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>',
+		active: 0,
+	},
+	{
+		id: "prom955",
+		source: "remote",
+		category: "page",
+		name: "Entrenamiento Espacial",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view",
+		paths: {
+			registro:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom955-view/registro/",
+		},
+		features: ["Promo", "Marketing game contest", "Admin panel"],
+		description:
+			"<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
+		active: 1,
+	},
+	{
+		id: "g73002",
+		source: "remote",
+		category: "page",
+		name: "Platica Polinesia",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-g73002-view/",
+		features: ["Landing", "Admin panel", "Fun activities"],
+		description:
+			"<p>Un micrositio con <strong>contenido interactivo</strong> de estos personajes.</p>\n<p>Votaciones, Give aways, Galeria entre otras caracteristicas especiales.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1009",
+		source: "remote",
+		category: "page",
+		name: "Disney 100 / Album",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/",
+		paths: {
+			album:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1009-view/album/",
+		},
+		features: [
+			"Promo",
+			"Marketing game contest",
+			"Trading cart",
+			"Admin panel",
+		],
+		description:
+			"<p>Una de nuestras promociones más recientes involucró el desarrollo frontend de un <strong>carrito de compra,</strong> permitiendo a los usuarios realizar intercambios de elementos basados en dos tipos de valores: <strong>monedas</strong> obtenidas mediante la participación en <strong>minijuegos</strong> y poder <strong>comprar tarjetas</strong> dentro de un <strong>álbum.</strong> El puntaje obtenido determinaba la cantidad de monedas ganadas.</p>\n  otro\n  <p>A su vez,un segundo minijuego proporcionaba un cierto número de <strong>tarjetas al azar</strong> para ayudarte a completar el álbum, y la acumulación de tarjetas repetidas proporcionaba otra base para poder intercambiarlas por tarjetas que aún no han sido obtenidas</p>\n\n\n  <p>Una de las cualidades destacables al trabajar con Idea es la eficiente división del trabajo y la cooperación en equipo que se experimenta. Dado que estos proyectos son <strong>Marketing Game Contest,</strong> requieren un sistema de registro de usuarios en línea y un control de los juegos en los que participa cada usuario. Toda esta información se presenta de manera clara y accesible a través de un panel de control que permite exportar informes en formato Excel.</p>\n  <p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1039",
+		source: "remote",
+		category: "page",
+		name: "¡Regresa a clases con Stitch!",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1039-view/",
+		features: [
+			"Promo",
+			"Marketing game contest",
+			"Trading cart",
+			"Admin panel",
+		],
+		description:
+			"<p>Sitios Web responsivos, con layout de fantacia.</p>\n<p>Mi rol en estos proyectos ha sido el de <strong>maquetador</strong> y <strong>desarrollador frontend del sitio en su conjunto,</strong> además de encargarme de la implementación de las <strong>vistas en PHP</strong> procesando diccionarios traídos desde los modelos ademas de <strong>Consulta tecnica a los Diseñadores.</strong></p>",
+		active: 0,
+	},
+	{
+		id: "parentesis",
+		source: "remote",
+		category: "cms",
+		name: "parentesis.com",
+		customer: "Contacto Interactivo",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/",
+		online_url: "https://parentesis.com/",
+		paths: {
+			quizz:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/quizz/",
+			"inline-query":
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/inline_query/",
+			infographics:
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-parentesis-view/infographics/",
+		},
+		features: ["Custom CMS", "notas interactivas", "encuestas", "Admin panel"],
+		description:
+			'<p>Uno de mis primeros proyectos importantes en equipo implicó el rediseño completo de un <strong>CMS/BLOG.</strong> Mi rol incluyó la creación de bocetos y mockups, así como la generación de la estructura del sitio utilizando <strong>HTML</strong> y <strong>CSS.</strong> Además, tuve la oportunidad de desarrollar infografías digitales para complementar el contenido del sitio.</p>\n  <p>Durante este proyecto, también implementamos <strong>plugins y modulos personalizados utilizando PHP.</strong> Uno de estos plugins fue un <strong>módulo de encuestas</strong> diseñado específicamente para realizar sondeos de mercadotecnia donde se usó de <strong>Pauta de Facebook, FacebookAds y pixel</strong> para llegar a <strong>segmentos de mercado específicos</strong> y obtener información valiosa.</p>\n  <p>Puedes encontrar un ejemplo de nuestra implementación en este enlace: <a href="https://parentesis.com/nota-interactiva/Dinos_que_domicilias_y_te_ayudamos_a_encontrar_los_mejores_beneficios__1_1" target="_blank" rel="noopener norefer" class="c__turquoise text--underline">Dinos qué domicilias y te ayudamos a encontrar los mejores beneficios.</a> <small class="d--block fs--italic">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, colaboré estrechamente con otros blogs asociados, como <a href="/portafolio/harmonia" class="c__turquoise text--underline">Harmonía.la</a> y <a href="https://pijamasurf.com/" target="_blank" rel="noopener norefer" class="c__turquoise text--underline">PijamaSurf.com</a>.</p>',
+		active: 1,
+	},
+	{
+		id: "parentesis-technical-test",
+		source: "remote",
+		category: "page",
+		name: "TechnicalTest | parentesis.com",
+		customer: "Contacto Interactivo",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-TechnicalTest-layout/",
+		features: ["Css Layout"],
+		description:
+			'<p>Uno de mis primeros proyectos importantes en equipo implicó el rediseño completo de un <strong>CMS/BLOG.</strong> Mi rol incluyó la creación de bocetos y mockups, así como la generación de la estructura del sitio utilizando <strong>HTML</strong> y <strong>CSS.</strong> Además, tuve la oportunidad de desarrollar infografías digitales para complementar el contenido del sitio.</p>\n  <p>Durante este proyecto, también implementamos <strong>plugins y modulos personalizados utilizando PHP.</strong> Uno de estos plugins fue un <strong>módulo de encuestas</strong> diseñado específicamente para realizar sondeos de mercadotecnia donde se usó de <strong>Pauta de Facebook, FacebookAds y pixel</strong> para llegar a <strong>segmentos de mercado específicos</strong> y obtener información valiosa.</p>\n  <p>Puedes encontrar un ejemplo de nuestra implementación en este enlace: <a href="https://parentesis.com/nota-interactiva/Dinos_que_domicilias_y_te_ayudamos_a_encontrar_los_mejores_beneficios__1_1" target="_blank" rel="noopener norefer" class="c__turquoise text--underline">Dinos qué domicilias y te ayudamos a encontrar los mejores beneficios.</a> <small class="d--block fs--italic">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, colaboré estrechamente con otros blogs asociados, como <a href="/portafolio/harmonia" class="c__turquoise text--underline">Harmonía.la</a> y <a href="https://pijamasurf.com/" target="_blank" rel="noopener norefer" class="c__turquoise text--underline">PijamaSurf.com</a>.</p>',
+		active: 1,
+	},
+	{
+		id: "harmonia",
+		source: "remote",
+		category: "cms",
+		name: "harmonia.la",
+		customer: "Contacto Interactivo",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/",
+		online_url: "https://harmonia.la/",
+		paths: {
+			"inline-query":
+				"https://mauriciovillegasbelmont.github.io/personal--workbook_album/ci-harmonia-view/inline_query/",
+		},
+		features: ["Custom CMS", "notas interactivas", "encuestas", "Admin panel"],
+		description:
+			'<p>Otro de los grandes proyectos en los que participé, se centró en el sitio web <a href="/portafolio/harmonia"  class="c__turquoise text--underline">Harmonía.la</a> Además de contar con soporte para realizar encuestas de mercado mediante <strong>Pauta de Facebook, FacebookAds y pixel</strong> y mostrar infografías digitales e interactivas, similar a su contraparte Paréntesis.com.</p>\n  <p>Puedes ver un ejemplo de nuestras encuestas en el siguiente enlace: <a href="https://harmonia.la/nota-interactiva/aprende-a-cuidar-mejor-de-ti-y-de-tus-seres-queridos"  target="_blank" rel="noopener norefer" class="c__turquoise text--underline">Aprende a cuidar mejor de ti y de tus seres queridos.</a> <small class="d--block fs--italic">(Recomiendo abrir este enlace en una ventana de incógnito para evitar problemas de caché generados después de la migración de servidores a la infraestructura de FRD).</small></p>\n  <p>Además, desarrollamos algunas <strong>herramientas/infografías</strong> interactivas para sondeos de mercado, como esta sobre la leche de vaca: <a href="https://harmonia.la/cuerpo/alimentacion/sabes-si-la-leche-de-vaca-que-consumes-es-la-mejor-averigualo-aqui" target="_blank" rel="noopener norefer" class="c__turquoise text--underline">¿Sabes si la leche de vaca que consumes es la mejor? Averígualo aquí.</a></p>',
+		active: 1,
+	},
+	{
+		id: "shambalante",
+		source: "remote",
+		category: "cms",
+		name: "shambalante.com",
+		customer: "Contacto Interactivo / FRD",
+		device: "responsive",
+		view_url: "https://shambalante.com/",
+		online_url: "https://shambalante.com/",
+		features: ["Wordpres CMS", "Plugin Customization"],
+		description: null,
+		active: 1,
+	},
+	{
+		id: "funo1415",
+		source: "remote",
+		category: "cms",
+		name: "funo1415",
+		customer: "losdeidea.com.mx",
+		device: "responsive",
+		view_url: "https://funo1415.d-link.mx/",
+		online_url: "https://funo.mx/",
+		features: ["custom CMS", "Pseudostatic content", "Admin panel"],
+		description:
+			"<p><strong>Funo</strong> fue un proyecto interesante en el que tuve la oportunidad de participar, ya que implicó la integración de diversos recursos por página y su contenido se considera pseudoestático. Esto significa que algunos elementos son modificables mientras que otros permanecen estáticos, con un enfoque principal en la gestión de propiedades, documentos de reportes e integración con <strong>APIs para inversionistas.</strong></p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como del sitio.</p>",
+		active: 1,
+	},
+	{
+		id: "vlyt",
+		source: "remote",
+		category: "cms",
+		name: "vlyt.mx",
+		customer: "vlyt.mx",
+		device: "responsive",
+		view_url: "https://vlyt.mx/",
+		online_url: "https://vlyt.mx/",
+		features: ["Wordpres CMS"],
+		description:
+			"<p><strong>Vlyt</strong> es un sitio web en <strong>WordPress</strong> que llegó a nosotros a través de un conocido. Realizamos el rediseño del sitio en varias fases o sprints, y hemos ido adaptándolo utilizando un framework llamado <strong>Gantry</strong>, que personalmente considero uno de mis favoritos debido a su gran flexibilidad.</p>\n <p>Es importante mencionar que el cliente quedó <strong>encantado</strong> con nuestro servicio.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1024",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Kia | Insideout - ¡UN VIAJE EMOCIONANTE!",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1024-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes que realizan pruebas de manejo en <strong>distribuidoras autorizadas.</strong></p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1022",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Deadpool&wolveine | Heinz - HEINZ BROMANCE",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1022-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "nb2b025",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "NESPRESSO | PREPARAR TU CAFÉ",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-nb2b025-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>una micro pagina para tutorial de uso de maquinas de café</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1027",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Stitch | Member's Mark - Aventura Member's Mark",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1027-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "prom1036",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Heinz | ESPN - ¡Conviértete en el MVP Heinz!",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-prom1036-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "ptd079",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Stitch | Laboratorio de Juegos",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-ptd079-view/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "pyme-scrollytelling",
+		source: "remote",
+		category: "page",
+		device: "responsive",
+		name: "Hisense | NBA - scrollytelling - ¡JUGADA HISENSE!",
+		customer: "losdeidea.com.mx",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pyme-scrollytelling/",
+		features: ["Game Contest Challenge", "Trivia"],
+		description:
+			"<p>Un sitio de concurso, diseñado para registrar a clientes basado en tikets de compra.</p>\n <p>El diseño fue elaborado por el equipo de Idea, mientras que yo me encargué del maquetado y desarrollo frontend tanto del panel de administración como de la trivia y animaciones.</p>",
+		active: 1,
+	},
+	{
+		id: "xantia",
+		source: "online",
+		category: "cms",
+		device: "responsive",
+		name: "info.xantia.mx",
+		customer: "losdeidea.com.mx",
+		view_url: "https://info.xantia.mx/",
+		features: ["Hubspot", "Wordpress"],
+		description:
+			"<p>Sitio promocional en <strong>WordPress,</strong> Landing Page para registro de clientes mediante el <strong>CRM HubSpot.</strong></p>",
+		active: 1,
+	},
+	{
+		id: "activation-roulette",
+		source: "remote",
+		category: "page",
+		name: "Activation Roulette",
+		customer: "Trendy",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/activation-roulette/",
+		paths: {},
+		features: ["Activación", "PWA", "Prize - Challenge - Retry - Miss Attempt"],
+		description:
+			"<p>Esta PWA para concursos con ruleta es robusta y versátil. Ofrece control total al presentador para forzar resultados (premio, challenge), almacena datos automáticamente ante cierres inesperados y funciona sin conexión gracias a su caché de assets, garantizando fluidez en cualquier evento.</p>",
+		active: 1,
+	},
+];
