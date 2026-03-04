@@ -2,6 +2,7 @@
 import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
 
 const { title } = Astro.props;
+
 // ID de Google Analytics - configurar en .env o reemplazar con tu ID real
 import GoogleAnalytics from "components/GoogleAnalytics/GoogleAnalytics.astro";
 const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
@@ -12,10 +13,9 @@ const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 		<GoogleAnalytics slot="gtag" measurementId={GA_MEASUREMENT_ID} />
 	)}
 	<div class="w-screen h-screen bg-gray-900" slot="body">
-		<slot name="header" />
-		<main class="portafolio">
-			<slot name="iframe" />
-			<slot name="tools" />
+		<slot name="background" />
+		<main>
+			<slot name="main" />
 		</main>
 	</div>
 </BaseTemplate>

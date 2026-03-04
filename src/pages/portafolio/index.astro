@@ -3,14 +3,21 @@ import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
 import TreeForest from "components/forest_three/TreeForest.astro";
 import Under_construction_site from "components/under_construction_site/under_construction_site.astro";
 import NavSide from "components/Nav/NavSide.astro";
-
-// @ts-ignore
 import PortafolioGrid from "components/PortafolioGrid/PortafolioGrid.astro";
+
+// ID de Google Analytics - configurar en .env o reemplazar con tu ID real
+import GoogleAnalytics from "components/GoogleAnalytics/GoogleAnalytics.astro";
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 ---
 
 <BaseTemplate title="Potrtafolio">
+	{import.meta.env.PROD && GA_MEASUREMENT_ID && (
+		<GoogleAnalytics slot="gtag" measurementId={GA_MEASUREMENT_ID} />
+	)}
 	<TreeForest slot="background" />
-	<Under_construction_site slot="main" />
-	<PortafolioGrid slot="main" />
-	<NavSide slot="main" />
+	<main slot="main">
+		<Under_construction_site />
+		<PortafolioGrid />
+		<NavSide />
+	</main>
 </BaseTemplate>
