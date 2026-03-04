@@ -25,6 +25,18 @@ export default {
 			listStyleType: {
 				middlescore: "'-'",
 			},
+			keyframes: {
+				jump: {
+					'0%': { transform: 'translateY(200%)' },
+					'100%': { transform: 'translateY(0%)' },
+				}
+			},
+			animation: {
+				jump: 'jump 0.5s ease-out',
+			},
+			backdropBlur: {
+				'2xl': '40px',
+			},
 		},
 	},
 	plugins: [],

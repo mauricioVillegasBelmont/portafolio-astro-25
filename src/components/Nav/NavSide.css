@@ -1,0 +1,18 @@
+/* NavSide component styles - using Tailwind @apply */
+
+.contact {
+	@apply bg-white/75 backdrop-blur-xl;
+	backdrop-filter: brightness(1.5);
+}
+
+.side-nav {
+	a.disabled {
+		@apply cursor-auto pointer-events-none text-gray-400;
+	}
+}
+
+.portafolio {
+	& .my_links span {
+		@apply hidden;
+	}
+}

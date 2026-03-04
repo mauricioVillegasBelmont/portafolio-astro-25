@@ -1,0 +1,10 @@
+/* Header component styles - using Tailwind @apply */
+
+.header_card {
+  @apply w-[75vw] sm:w-[calc(45ch+3rem)] sm:max-w-[calc(45ch+3rem)];
+}
+
+.header_card .header_card__content {
+  @apply bg-white/75 backdrop-blur-xl;
+  backdrop-filter: brightness(1.5);
+}

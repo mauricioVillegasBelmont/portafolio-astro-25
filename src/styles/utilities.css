@@ -1,0 +1,36 @@
+/* Utilities styles - migrated from _glass.scss + _scroll.scss */
+
+/* Glass morphism effects */
+.glass-primary {
+  @apply bg-white/75 backdrop-blur-xl;
+  backdrop-filter: brightness(1.5);
+}
+
+.glass-secondary {
+  @apply bg-gray-300/50 backdrop-blur-xl;
+  backdrop-filter: brightness(1.5);
+}
+
+.glass-typey-1 {
+  @apply bg-white/50 backdrop-blur;
+}
+
+.glass-dark {
+  @apply bg-gray-900/75 backdrop-blur-xl;
+  backdrop-filter: brightness(1.5);
+}
+
+/* Custom scrollbar */
+.scroll-barr {
+  &::-webkit-scrollbar-track {
+    @apply rounded bg-black;
+  }
+
+  &::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-800;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded border border-gray-800 bg-white;
+  }
+}

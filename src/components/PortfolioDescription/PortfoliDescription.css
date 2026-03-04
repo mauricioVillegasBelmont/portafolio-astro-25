@@ -1,0 +1,50 @@
+/* PortfolioDescription component styles - using Tailwind @apply */
+
+.glass-btn {
+  @apply bg-repeat;
+}
+
+.description {
+  @apply w-[540px] max-w-[calc(100vw-1.5rem)] max-h-[80vh];
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, .25));
+
+  &__container {
+    @apply max-h-[80vh] overflow-auto;
+
+    /* Custom scrollbar styles */
+    &::-webkit-scrollbar-track {
+      @apply rounded bg-black;
+    }
+
+    &::-webkit-scrollbar {
+      @apply w-2 h-2 bg-gray-800;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded border border-gray-800 bg-white;
+    }
+  }
+
+  &[open] {
+    animation-name: jump;
+    animation-duration: .5s;
+  }
+
+  &::backdrop {
+    @apply backdrop-blur-xl bg-black/25;
+  }
+
+  hr {
+    @apply border-t border-gray-300;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(200%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

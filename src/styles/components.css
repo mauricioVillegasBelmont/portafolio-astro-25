@@ -1,0 +1,120 @@
+/* Components styles - migrated from details.scss + notch.scss */
+
+/* Notch effects */
+.notch {
+  @apply overflow-hidden border-t border-b border-white;
+}
+
+.notch-br,
+.notch-rb {
+  @apply notch;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+}
+
+.notch-bl,
+.notch-lb {
+  @apply notch;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    calc(0% + 20px) 100%,
+    0% calc(100% - 20px)
+  );
+}
+
+.notch-tl,
+.notch-lt {
+  @apply notch;
+  clip-path: polygon(
+    calc(0% + 20px) 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 calc(0% + 20px)
+  );
+}
+
+.notch-tr,
+.notch-rt {
+  @apply notch;
+  clip-path: polygon(
+    calc(100% - 20px) 0%,
+    100% calc(100% - 20px),
+    100% 100%,
+    0 100%,
+    0 0
+  );
+}
+
+/* Details / Accordion styles */
+.details__item {
+  @apply max-h-[65vh];
+}
+
+.details__item[open] {
+  @apply overflow-auto pb-6;
+  background-color: rgba(175, 175, 175, 0.5);
+  backdrop-filter: blur(15px) brightness(1.5);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, calc(0% + 20px) 100%, 0 calc(100% - 20px));
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar-track {
+    @apply rounded bg-black;
+  }
+
+  &::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-800;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded border border-gray-800 bg-white;
+  }
+
+  & > .details__sumary {
+    @apply underline sticky top-0 bg-white mb-7 z-10;
+  }
+}
+
+.details__sumary {
+  @apply cursor-pointer select-none ml-auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+
+  &::marker {
+    content: '';
+  }
+
+  &::after {
+    content: '';
+    @apply absolute inset-0 w-0 h-full -z-10;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.75) 100%
+    );
+    transition: width 0.25s ease-in-out;
+  }
+
+  &:hover::after {
+    @apply w-full;
+  }
+
+  [data-icon] {
+    @apply transition-transform duration-200 ease-in-out w-fit;
+  }
+}
+
+.details__content {
+  @apply px-6;
+
+  &--0 {
+    @apply p-0;
+  }
+}

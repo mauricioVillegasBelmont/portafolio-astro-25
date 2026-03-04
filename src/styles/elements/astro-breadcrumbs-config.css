@@ -1,0 +1,15 @@
+/* Astro Breadcrumbs configuration - migrated from SCSS with() syntax */
+@import "astro-breadcrumbs/breadcrumbs.scss";
+
+/* Override breadcrumbs styles with custom values */
+.astroy-breadcrumbs {
+  font-size: 0.75rem;
+
+  a {
+    color: #37454e;
+  }
+
+  .separator {
+    color: #292929;
+  }
+}

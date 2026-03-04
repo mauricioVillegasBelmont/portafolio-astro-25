@@ -1,0 +1,23 @@
+/* Aboutme component styles - using Tailwind @apply */
+
+.bullet {
+  li, dd {
+    @apply pl-4 before:content-['-_'];
+  }
+}
+
+.details-item {
+  @apply max-w-[75vw] max-h-[55vh] ml-auto sm:w-[calc(45ch+3rem)] sm:max-w-[calc(45ch+3rem)];
+
+  &[open] {
+    .summary-item {
+      [data-icon] {
+        @apply rotate-90;
+      }
+    }
+  }
+}
+
+.summary-item {
+  @apply mr-1;
+}

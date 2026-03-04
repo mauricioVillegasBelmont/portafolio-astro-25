@@ -1,0 +1,14 @@
+/* TreeForest component styles - using Tailwind @apply */
+#three {
+	canvas {
+		@apply max-w-[100vw] max-h-[100vh] w-full h-full bg-[rebeccapurple];
+	}
+}
+
+.treeForest {
+	.overlay {
+		@apply absolute inset-0 w-full h-full object-cover object-center pointer-events-none;
+		mix-blend-mode: color-burn;
+		opacity: 0.5;
+	}
+}

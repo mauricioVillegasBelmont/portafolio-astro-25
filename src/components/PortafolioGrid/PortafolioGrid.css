@@ -1,0 +1,23 @@
+/* PortafolioGrid component styles - using Tailwind @apply */
+
+.portafolioGrid {
+  @apply h-fit max-h-[75vh] overflow-auto max-w-[75vw];
+
+  /* Custom scrollbar styles */
+  &::-webkit-scrollbar-track {
+    @apply rounded bg-black;
+  }
+
+  &::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-800;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded border border-gray-800 bg-white;
+  }
+
+  .title {
+    @apply bg-gray-900/75 backdrop-blur-xl min-w-[30%] w-fit;
+    backdrop-filter: brightness(1.5);
+  }
+}

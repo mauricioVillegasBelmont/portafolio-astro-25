@@ -1,10 +1,9 @@
 ---
-import "styles/elements/notch.scss";
-import "./NavSide.scss";
+import "styles/components.css";
+import "./NavSide.css";
 
-import { Icon } from "astro-icon/components";
 import Link from "./Link.astro";
-import { navData } from "data/navData.ts";
+import { navData } from "data/navData";
 ---
 
 <nav class="side-nav fixed bottom-0 right-0 mt-auto w-fit">
@@ -18,12 +17,8 @@ import { navData } from "data/navData.ts";
 					icon={item.icon}
 					classes={item.classes}
 					rel={(item.rel as "external" | "author" | undefined)}
-					data-navLink
 				/>
 			))
 		}
 	</div>
 </nav>
-<script>
-	import "components/Nav/link.ts";
-</script>

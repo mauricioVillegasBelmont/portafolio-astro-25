@@ -1,0 +1,333 @@
+/* Base styles - migrated from globals.scss, fonts.scss, reset.scss */
+
+@layer base {
+  /* Font faces - Bitter */
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-BlackItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Bold.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-BoldItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-ExtraLight.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-ExtraBoldItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-ExtraBoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-ExtraLightItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-ExtraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-ExtraBold.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Medium.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-LightItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Italic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Light.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-SemiBoldItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-SemiBold.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Regular.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-MediumItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Black.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-Thin.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Bitter';
+    src: url('/portafolio-astro-25/fonts/Bitter-ThinItalic.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Bitter-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Font faces - Ubuntu */
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('/portafolio-astro-25/fonts/Ubuntu-Light.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Ubuntu-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('/portafolio-astro-25/fonts/Ubuntu-Regular.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Ubuntu-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url('/portafolio-astro-25/fonts/Ubuntu-Bold.woff2') format('woff2'),
+         url('/portafolio-astro-25/fonts/Ubuntu-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Reset styles */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure {
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  body,
+  body *,
+  body *::before,
+  body *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  :-webkit-any-link,
+  :any-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  svg,
+  canvas,
+  video,
+  object,
+  picture {
+    user-select: none;
+    object-fit: cover;
+    display: block;
+  }
+
+  img.contain,
+  object.contain,
+  figure.contain,
+  picture.contain,
+  video.contain {
+    object-fit: contain;
+  }
+
+  img.cover,
+  object.cover,
+  figure.cover,
+  picture.cover,
+  video.cover {
+    object-fit: cover;
+  }
+
+  dialog {
+    background-color: transparent;
+  }
+
+  dialog::backdrop {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    background-color: transparent;
+  }
+
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 0;
+  }
+
+  button.disabled,
+  a.disabled,
+  input.disabled,
+  select.disabled,
+  textarea.disabled {
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  button > img,
+  button > svg,
+  button > canvas,
+  button > object,
+  button > figure,
+  button > picture,
+  button > video,
+  a > img,
+  a > svg,
+  a > canvas,
+  a > object,
+  a > figure,
+  a > picture,
+  a > video {
+    pointer-events: none;
+    border: none;
+  }
+
+  sub {
+    vertical-align: sub;
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
+  hr {
+    border: 0;
+  }
+}

@@ -1,0 +1,15 @@
+/* Custom scrollbar styles - using Tailwind @apply */
+
+.scroll-barr {
+  &::-webkit-scrollbar-track {
+    @apply rounded bg-black;
+  }
+
+  &::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-800;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded border border-gray-800 bg-white;
+  }
+}

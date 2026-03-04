@@ -1,0 +1,12 @@
+/* OnlineView component styles - using Tailwind @apply */
+
+.iframe-wrapper {
+  @apply overflow-hidden;
+  height: calc(100lvh - 58px);
+
+  &::after {
+    @apply content-[''] absolute inset-0 w-full h-full z-10 pointer-events-none;
+    background-image: url('/portafolio-astro-25/img/effectScreen.gif');
+    opacity: .25;
+  }
+}
