@@ -1,5 +1,5 @@
 ---
-import BaseTemplate from "layouts/BaseTemplate/BaseTemplate.astro";
+import PageTemplate from "layouts/PageTemplate/PageTemplate.astro";
 import TreeForest from "components/forest_three/TreeForest.astro";
 import Under_construction_site from "components/under_construction_site/under_construction_site.astro";
 import NavSide from "components/Nav/NavSide.astro";
@@ -10,7 +10,7 @@ import GoogleAnalytics from "components/GoogleAnalytics/GoogleAnalytics.astro";
 const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 ---
 
-<BaseTemplate title="Potrtafolio">
+<PageTemplate title="Potrtafolio">
 	{import.meta.env.PROD && GA_MEASUREMENT_ID && (
 		<GoogleAnalytics slot="gtag" measurementId={GA_MEASUREMENT_ID} />
 	)}
@@ -20,4 +20,4 @@ const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? "";
 		<PortafolioGrid />
 		<NavSide />
 	</main>
-</BaseTemplate>
+</PageTemplate>
