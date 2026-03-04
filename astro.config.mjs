@@ -12,5 +12,21 @@ export default defineConfig({
   integrations: [
     tailwind(),
     icon(),
-  ]
+  ],
+  vite: {
+    resolve: {
+      alias: {
+        components: '/src/components',
+        layouts: '/src/layouts',
+        modules: '/src/modules',
+        pages: '/src/pages',
+        styles: '/src/styles',
+        assets: '/src/assets',
+        data: '/src/data',
+        icons: '/src/icons',
+        libs: '/src/libs',
+        utils: '/src/utils',
+      }
+    }
+  }
 });

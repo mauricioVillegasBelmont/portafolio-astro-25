@@ -1,14 +1,21 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*", ".back.dist"],
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "allowJs": true,
-    "baseUrl": "src",
-    // "paths": {
-    //   "components/*": ["src/components/*"],
-    //   "layouts/*": ["src/layouts/*"]
-    // }
-  },
-  "exclude": [".back.dist",".back",".back.*"]
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*", ".back.dist"],
+	"compilerOptions": {
+		"strictNullChecks": true,
+		"allowJs": true,
+		"paths": {
+			"components/*": ["./src/components/*"],
+			"layouts/*": ["./src/layouts/*"],
+			"modules/*": ["./src/modules/*"],
+			"pages/*": ["./src/pages/*"],
+			"styles/*": ["./src/styles/*"],
+			"assets/*": ["./src/assets/*"],
+			"data/*": ["./src/data/*"],
+			"icons/*": ["./src/icons/*"],
+			"libs/*": ["./src/libs/*"],
+			"utils/*": ["./src/utils/*"]
+		}
+	},
+	"exclude": [".back.dist", ".back", ".back.*"]
 }
