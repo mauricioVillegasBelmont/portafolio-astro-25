@@ -511,7 +511,7 @@ export const Portafolio: PortafolioSchema[] = [
 		id: "three-presentation",
 		source: "remote",
 		category: "page",
-		name: "Three js presentation",
+		name: "Three js | presentation",
 		customer: "Personal",
 		device: "responsive",
 		view_url: "https://three-presentation.vercel.app/",
@@ -543,7 +543,7 @@ export const Portafolio: PortafolioSchema[] = [
 		id: "calculadora-ahorro",
 		source: "remote",
 		category: "page",
-		name: "calculadora ahorro para el retiro",
+		name: "Calculadora ahorro para el retiro",
 		customer: "miretiroasegurado.com",
 		device: "responsive",
 		view_url:
@@ -572,7 +572,7 @@ export const Portafolio: PortafolioSchema[] = [
 		id: "my-first-wokbook",
 		source: "remote",
 		category: "page",
-		name: "Mí primer portafolio",
+		name: "Mi primer portafolio",
 		customer: "Personal",
 		device: "responsive",
 		view_url:

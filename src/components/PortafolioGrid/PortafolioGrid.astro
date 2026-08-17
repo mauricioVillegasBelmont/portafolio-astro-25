@@ -43,11 +43,11 @@ import { StringUtils } from "utils/stringUtils";
 			{
 				pages.map(async (post) => {
 					return (
-						<div class="mb--3 pb--3">
+						<div class="p-3 rounded-[0.75rem] bg-white/80">
 							<Link
 								href={`/portafolio/${post.id}`}
 								text={post.name}
-								classes="hover:underline"
+								classes="hover:underline font-bold"
 							/>
 							<small class="block ml-3 text-gray-700">
 								{post.customer} - {post.device}
@@ -78,11 +78,11 @@ import { StringUtils } from "utils/stringUtils";
 			{
 				cms.map(async (post) => {
 					return (
-						<div class="mb--3 pb--3">
+						<div class="p-3 rounded-[0.75rem] bg-white/80">
 							<Link
 								href={`/portafolio/${post.id}`}
 								text={post.name}
-								classes="hover:underline"
+								classes="hover:underline font-bold"
 							/>
 							<small class="block ml-3 text-gray-700">
 								{post.customer} - {post.device}
@@ -113,10 +113,10 @@ import { StringUtils } from "utils/stringUtils";
 			{
 				youtube.map(async (post) => {
 					return (
-						<div class="mb--3 pb--3">
+						<div class="p-3 rounded-[0.75rem] bg-white/80">
 							<a
 								href={`https://www.youtube.com/watch?v=${post.id}`}
-								class=" hover:underline"
+								class=" hover:underline font-bold"
 								target="_blank"
 								class="my_links"
 								rel="noopener norefer">
