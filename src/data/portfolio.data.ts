@@ -539,4 +539,47 @@ export const Portafolio: PortafolioSchema[] = [
 		description: "<p>prueba tecnica STP, on scroll animation</p>",
 		active: 1,
 	},
+	{
+		id: "calculadora-ahorro",
+		source: "remote",
+		category: "page",
+		name: "calculadora ahorro para el retiro",
+		customer: "miretiroasegurado.com",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/calculadoraAhorro_webModule/",
+		paths: {},
+		features: ["Lit", "webmodule"],
+		description:
+			"<p>Web module para <a href='https://miretiroasegurado.com/calculadora/' rel='nofollow'>miretiroasegurado.com</a></p> <p>Calculadora basada en tabla predefinida</p>",
+		active: 1,
+	},
+	{
+		id: "calculadora-carrera",
+		source: "remote",
+		category: "page",
+		name: "Calculadora de Inversión para mi Carrera",
+		customer: "ITAM",
+		device: "responsive",
+		view_url: "https://intercambio2.itam.mx/?p=210",
+		paths: {},
+		features: ["wordpress", "plugin", "react", "tailwind"],
+		description:
+			"<p>Web module para <a href='https://intercambio2.itam.mx/?p=210' rel='nofollow'>itam.mx</a></p> <p>Calculadora de Inviercion de carrera basada en tabla predefinida</p>",
+		active: 1,
+	},
+	{
+		id: "my-first-wokbook",
+		source: "remote",
+		category: "page",
+		name: "Mí primer portafolio",
+		customer: "Personal",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/personal-portfolio-fish/",
+		paths: {},
+		features: ["HTML", "jquery", "Scrolly-Telling"],
+		description: "<p>Mi primer Portafolio</p>",
+		active: 1,
+	},
 ];
