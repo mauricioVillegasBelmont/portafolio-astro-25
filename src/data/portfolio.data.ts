@@ -507,4 +507,36 @@ export const Portafolio: PortafolioSchema[] = [
 			"<p>Esta PWA para concursos con ruleta es robusta y versátil. Ofrece control total al presentador para forzar resultados (premio, challenge), almacena datos automáticamente ante cierres inesperados y funciona sin conexión gracias a su caché de assets, garantizando fluidez en cualquier evento.</p>",
 		active: 1,
 	},
+	{
+		id: "three-presentation",
+		source: "remote",
+		category: "page",
+		name: "Three js presentation",
+		customer: "Personal",
+		device: "responsive",
+		view_url: "https://three-presentation.vercel.app/",
+		paths: {},
+		features: [
+			"Threejs",
+			"model orquestator",
+			"motion, animation, camera / timeline",
+		],
+		description:
+			"<h3>Technical Motion & Presentation System</h3></hr><p>Aplicación experimental desarrollada <strong>solo por diversión</strong>, enfocada en la coordinación de modelos 3D, animaciones, motion y cámara dentro de un entorno interactivo basado en <strong>Three.js</strong>.</p><p>El sistema permite construir y controlar presentaciones 3D mediante una configuración declarativa en <strong>JSON</strong>, donde se establecen las relaciones entre <strong>modelos GLTF, controles, animaciones, cámaras y escenas</strong>. Esto permite separar la lógica de presentación de la implementación técnica y crear diferentes secuencias sin modificar directamente el código de la aplicación.</p><p>Cada escena funciona como una composición independiente que puede definir qué modelos están activos, qué animaciones deben ejecutarse, cómo debe desplazarse o comportarse la cámara y qué transiciones deben ocurrir entre estados. Un sistema de coordinación se encarga de sincronizar el <strong>motion de los modelos con los movimientos de cámara</strong>, permitiendo generar secuencias cinematográficas y presentaciones interactivas.</p><p>La aplicación también incorpora un sistema de presentación <strong>vertical y horizontal</strong>, similar a una presentación convencional con soporte para interfaz touch/drag. Cada diapositiva está asociada a una escena 3D determinada, de modo que al avanzar o retroceder entre diapositivas se realiza la transición correspondiente de la escena, sus modelos, animaciones y cámara.</p><p>La arquitectura fue construida utilizando <strong>TypeScript + React</strong>, con <strong>React Three Fiber (R3F)</strong> como capa declarativa para Three.js y <strong>Drei</strong> para componentes y utilidades 3D. <strong>Zustand</strong> funciona como sistema de estado global, centralizando información relacionada con escenas, modelos, animaciones, controles y estado de la presentación.</p><p>El objetivo principal del proyecto no fue resolver un problema comercial específico, sino experimentar con una arquitectura capaz de convertir una secuencia de presentación en un <strong>sistema de dirección y orquestación 3D configurable</strong>, explorando la relación entre contenido, animación, cámara e interacción.</p><p>En esencia, el proyecto puede entenderse como un pequeño <strong>motor de presentaciones cinematográficas 3D</strong>, donde el JSON define <em>qué debe suceder</em> y el sistema de orquestación se encarga de coordinar <em>cómo sucede</em> dentro de Three.js.</p>",
+		active: 1,
+	},
+	{
+		id: "pt-stp",
+		source: "remote",
+		category: "page",
+		name: "pt-stp",
+		customer: "Personal",
+		device: "responsive",
+		view_url:
+			"https://mauriciovillegasbelmont.github.io/personal--workbook_album/pt-stp/",
+		paths: {},
+		features: ["scroll-magic", "GSAP", "Scrolly telling"],
+		description: "<p>prueba tecnica STP, on scroll animation</p>",
+		active: 1,
+	},
 ];
